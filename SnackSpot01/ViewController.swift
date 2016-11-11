@@ -17,6 +17,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     @IBOutlet weak var Map: MKMapView!
     let locationManager = CLLocationManager()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,7 +27,86 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         self.locationManager.startUpdatingLocation()
         self.Map.showsUserLocation = true
         
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = CLLocationCoordinate2D(latitude:-29.712860,longitude:-53.716847)
+        annotation.title = "Lancheria do Menezes"
+        annotation.subtitle = "lanches e almoço"
+        
+        let annotation2 = MKPointAnnotation()
+        annotation2.coordinate = CLLocationCoordinate2D(latitude:-29.711385,longitude:-53.715995)
+        annotation2.title = "Posto da UFSM"
+        annotation2.subtitle = "conveniências"
+        
+        let annotation3 = MKPointAnnotation()
+        annotation3.coordinate = CLLocationCoordinate2D(latitude:-29.713931,longitude:-53.714774)
+        annotation3.title = "Xis do Hospital"
+        annotation3.subtitle = "lanches e almoços"
+        
+        let annotation4 = MKPointAnnotation()
+        annotation4.coordinate = CLLocationCoordinate2D(latitude:-29.715718,longitude:-53.715030)
+        annotation4.title = "Lancheria do CCNE"
+        annotation4.subtitle = "lanches"
+        
+        /*
+         let myActualSpot = MKPointAnnotation()
+         myActualSpot.coordinate = center
+         myActualSpot.title = "Estou aqui :)"
+         myActualSpot.subtitle = "tem lanche?"
+         */
+        Map.addAnnotation(annotation)
+        Map.addAnnotation(annotation2)
+        Map.addAnnotation(annotation3)
+        Map.addAnnotation(annotation4)
+        Map.delegate = self
+        // Map.addAnnotation(myActualSpot)
+
+        
     }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView?
+    {
+        if annotation is MKUserLocation {return nil}
+        
+        let reuseId = "pin"
+        
+        var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView
+        if pinView == nil {
+            pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+            pinView!.canShowCallout = true
+            pinView!.animatesDrop = true
+            pinView!.calloutOffset = CGPoint(x: -5, y: 5)
+            pinView?.pinTintColor = .orange
+            let calloutButton = UIButton(type: .detailDisclosure)
+            pinView!.rightCalloutAccessoryView = calloutButton
+            pinView!.sizeToFit()
+        }
+        else {
+            pinView!.annotation = annotation
+        }
+        
+        
+        return pinView
+    }
+    
+    
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        if control == view.rightCalloutAccessoryView {
+            print("SHOW TOP SEXTOU")
+            performSegue(withIdentifier: "Info", sender: view)
+        }
+    }
+    
+    func prepare(for segue: UIStoryboardSegue?, sender: AnyObject?) {
+        
+        if (segue?.identifier == "Info") {
+            
+            _ = segue!.destination as! InfoViewController
+            
+        }
+        
+    }
+
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
     {
@@ -36,21 +116,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         self.Map.setRegion(region, animated: true)
         self.locationManager.stopUpdatingLocation()
         
-        let annotation = MKPointAnnotation()
-        
-        annotation.coordinate = CLLocationCoordinate2D(latitude:-29.688,longitude:-53.824)
-        
-        annotation.title = "teste"
-        annotation.subtitle = "testinho"
-        
-        /*
-        let myActualSpot = MKPointAnnotation()
-        myActualSpot.coordinate = center
-        myActualSpot.title = "Estou aqui :)"
-        myActualSpot.subtitle = "tem lanche?"
-        */
-        Map.addAnnotation(annotation)
-        // Map.addAnnotation(myActualSpot)
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)

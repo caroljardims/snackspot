@@ -14,6 +14,13 @@
 		CF5C0D6A1D89C6B3007BC1A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF5C0D681D89C6B3007BC1A2 /* LaunchScreen.storyboard */; };
 		CF5C0D751D89C6B3007BC1A2 /* SnackSpot01Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5C0D741D89C6B3007BC1A2 /* SnackSpot01Tests.swift */; };
 		CF5C0D801D89C6B3007BC1A2 /* SnackSpot01UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5C0D7F1D89C6B3007BC1A2 /* SnackSpot01UITests.swift */; };
+		CF5F75081DD644F800F7B519 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5F75071DD644F800F7B519 /* InfoViewController.swift */; };
+		CF5F750B1DD6479800F7B519 /* foodtruck.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CF5F750A1DD6479800F7B519 /* foodtruck.jpg */; };
+		CF5F750E1DD6497C00F7B519 /* icons-04-2.png in Resources */ = {isa = PBXBuildFile; fileRef = CF5F750C1DD6497C00F7B519 /* icons-04-2.png */; };
+		CF5F750F1DD6497C00F7B519 /* icons-04.png in Resources */ = {isa = PBXBuildFile; fileRef = CF5F750D1DD6497C00F7B519 /* icons-04.png */; };
+		CF5F75131DD64D9A00F7B519 /* backbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = CF5F75121DD64D9A00F7B519 /* backbutton.png */; };
+		CF5F751D1DD6549600F7B519 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = CF5F751C1DD6549600F7B519 /* background.png */; };
+		CF5F751F1DD6661100F7B519 /* nome.png in Resources */ = {isa = PBXBuildFile; fileRef = CF5F751E1DD6661100F7B519 /* nome.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +54,13 @@
 		CF5C0D7B1D89C6B3007BC1A2 /* SnackSpot01UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnackSpot01UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF5C0D7F1D89C6B3007BC1A2 /* SnackSpot01UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackSpot01UITests.swift; sourceTree = "<group>"; };
 		CF5C0D811D89C6B3007BC1A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF5F75071DD644F800F7B519 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		CF5F750A1DD6479800F7B519 /* foodtruck.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = foodtruck.jpg; sourceTree = "<group>"; };
+		CF5F750C1DD6497C00F7B519 /* icons-04-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons-04-2.png"; sourceTree = "<group>"; };
+		CF5F750D1DD6497C00F7B519 /* icons-04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons-04.png"; sourceTree = "<group>"; };
+		CF5F75121DD64D9A00F7B519 /* backbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backbutton.png; sourceTree = "<group>"; };
+		CF5F751C1DD6549600F7B519 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		CF5F751E1DD6661100F7B519 /* nome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nome.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +111,14 @@
 		CF5C0D5E1D89C6B3007BC1A2 /* SnackSpot01 */ = {
 			isa = PBXGroup;
 			children = (
+				CF5F75091DD6478D00F7B519 /* images */,
 				CF5C0D5F1D89C6B3007BC1A2 /* AppDelegate.swift */,
 				CF5C0D611D89C6B3007BC1A2 /* ViewController.swift */,
 				CF5C0D631D89C6B3007BC1A2 /* Main.storyboard */,
 				CF5C0D661D89C6B3007BC1A2 /* Assets.xcassets */,
 				CF5C0D681D89C6B3007BC1A2 /* LaunchScreen.storyboard */,
 				CF5C0D6B1D89C6B3007BC1A2 /* Info.plist */,
+				CF5F75071DD644F800F7B519 /* InfoViewController.swift */,
 			);
 			path = SnackSpot01;
 			sourceTree = "<group>";
@@ -123,6 +139,19 @@
 				CF5C0D811D89C6B3007BC1A2 /* Info.plist */,
 			);
 			path = SnackSpot01UITests;
+			sourceTree = "<group>";
+		};
+		CF5F75091DD6478D00F7B519 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				CF5F75121DD64D9A00F7B519 /* backbutton.png */,
+				CF5F751C1DD6549600F7B519 /* background.png */,
+				CF5F750C1DD6497C00F7B519 /* icons-04-2.png */,
+				CF5F751E1DD6661100F7B519 /* nome.png */,
+				CF5F750D1DD6497C00F7B519 /* icons-04.png */,
+				CF5F750A1DD6479800F7B519 /* foodtruck.jpg */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,8 +262,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF5C0D6A1D89C6B3007BC1A2 /* LaunchScreen.storyboard in Resources */,
+				CF5F751D1DD6549600F7B519 /* background.png in Resources */,
+				CF5F751F1DD6661100F7B519 /* nome.png in Resources */,
+				CF5F750B1DD6479800F7B519 /* foodtruck.jpg in Resources */,
+				CF5F75131DD64D9A00F7B519 /* backbutton.png in Resources */,
+				CF5F750F1DD6497C00F7B519 /* icons-04.png in Resources */,
 				CF5C0D671D89C6B3007BC1A2 /* Assets.xcassets in Resources */,
 				CF5C0D651D89C6B3007BC1A2 /* Main.storyboard in Resources */,
+				CF5F750E1DD6497C00F7B519 /* icons-04-2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF5C0D621D89C6B3007BC1A2 /* ViewController.swift in Sources */,
+				CF5F75081DD644F800F7B519 /* InfoViewController.swift in Sources */,
 				CF5C0D601D89C6B3007BC1A2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
