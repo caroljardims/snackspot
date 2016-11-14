@@ -21,6 +21,23 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let requestURL: NSURL = NSURL(string: "http://www.learnswiftonline.com/Samples/subway.json")!
+        let urlRequest: NSMutableURLRequest = NSMutableURLRequest(url: requestURL as URL)
+        let session = URLSession.shared
+        let task = session.dataTask(with: urlRequest as URLRequest) {
+            (data, response, error) -> Void in
+            
+            let httpResponse = response as! HTTPURLResponse
+            let statusCode = httpResponse.statusCode
+            
+            if (statusCode == 200) {
+                print("Everyone is fine, file downloaded successfully.")
+            }
+        }
+        
+        task.resume()
+        
+        
         self.locationManager.delegate = self
         self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         self.locationManager.requestWhenInUseAuthorization()
@@ -39,7 +56,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         let annotation3 = MKPointAnnotation()
         annotation3.coordinate = CLLocationCoordinate2D(latitude:-29.713931,longitude:-53.714774)
-        annotation3.title = "Xis do Hospital"
+        annotation3.title = "Xis do HUSM"
         annotation3.subtitle = "lanches e almoços"
         
         let annotation4 = MKPointAnnotation()
