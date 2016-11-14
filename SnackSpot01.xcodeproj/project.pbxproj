@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF1CF7D71DDA2F43008CB962 /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = CF1CF7D61DDA2F43008CB962 /* pin.png */; };
 		CF5C0D601D89C6B3007BC1A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5C0D5F1D89C6B3007BC1A2 /* AppDelegate.swift */; };
 		CF5C0D621D89C6B3007BC1A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5C0D611D89C6B3007BC1A2 /* ViewController.swift */; };
 		CF5C0D651D89C6B3007BC1A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF5C0D631D89C6B3007BC1A2 /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CF1CF7D61DDA2F43008CB962 /* pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin.png; sourceTree = "<group>"; };
 		CF5C0D5C1D89C6B3007BC1A2 /* SnackSpot01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnackSpot01.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF5C0D5F1D89C6B3007BC1A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF5C0D611D89C6B3007BC1A2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 		CF5F75091DD6478D00F7B519 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				CF1CF7D61DDA2F43008CB962 /* pin.png */,
 				CF5F75221DD66CFE00F7B519 /* marcaSS1.png */,
 				CF5F75121DD64D9A00F7B519 /* backbutton.png */,
 				CF5F751C1DD6549600F7B519 /* background.png */,
@@ -220,7 +223,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Caroline Siqueira";
 				TargetAttributes = {
 					CF5C0D5B1D89C6B3007BC1A2 = {
@@ -271,6 +274,7 @@
 				CF5F75131DD64D9A00F7B519 /* backbutton.png in Resources */,
 				CF5F750F1DD6497C00F7B519 /* icons-04.png in Resources */,
 				CF5C0D671D89C6B3007BC1A2 /* Assets.xcassets in Resources */,
+				CF1CF7D71DDA2F43008CB962 /* pin.png in Resources */,
 				CF5C0D651D89C6B3007BC1A2 /* Main.storyboard in Resources */,
 				CF5F75231DD66CFE00F7B519 /* marcaSS1.png in Resources */,
 				CF5F750E1DD6497C00F7B519 /* icons-04-2.png in Resources */,
@@ -369,8 +373,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -415,8 +421,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -435,6 +443,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};

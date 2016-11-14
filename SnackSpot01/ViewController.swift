@@ -21,7 +21,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let requestURL: NSURL = NSURL(string: "http://www.learnswiftonline.com/Samples/subway.json")!
+        let requestURL: NSURL = NSURL(string: "https://raw.githubusercontent.com/caroljardims/snackspot/master/localinfos.js")!
         let urlRequest: NSMutableURLRequest = NSMutableURLRequest(url: requestURL as URL)
         let session = URLSession.shared
         let task = session.dataTask(with: urlRequest as URLRequest) {
@@ -32,7 +32,36 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             
             if (statusCode == 200) {
                 print("Everyone is fine, file downloaded successfully.")
-            }
+                
+                do{
+                    
+                    let json = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! [String: AnyObject]
+                    if let places = json["places"] as? [[String : AnyObject]] {
+                        for place in places {
+                           if let title = place["title"] as? String {
+                               if let subtitle = place["subtitle"] as? String {
+                                    if let lati = place["latitude"] as? String {
+                                        if let long = place["longitude"] as? String {
+                                            if let aval = place["aval"] as? String {
+                                                let annotation = MKPointAnnotation()
+                                                annotation.coordinate = CLLocationCoordinate2D(latitude:Double(lati)!,longitude:Double(long)!)
+                                                annotation.title = title
+                                                annotation.subtitle = subtitle
+                                                self.Map.addAnnotation(annotation)
+                                                print(title,subtitle, lati, long, aval)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                } catch {
+                    print("Error with Json: \(error)")
+                }
+                
+            } else { print(" Deu Merda!") }
         }
         
         task.resume()
@@ -44,25 +73,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         self.locationManager.startUpdatingLocation()
         self.Map.showsUserLocation = true
         
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = CLLocationCoordinate2D(latitude:-29.712860,longitude:-53.716847)
-        annotation.title = "Lancheria do Menezes"
-        annotation.subtitle = "lanches e almoço"
-        
-        let annotation2 = MKPointAnnotation()
-        annotation2.coordinate = CLLocationCoordinate2D(latitude:-29.711385,longitude:-53.715995)
-        annotation2.title = "Posto da UFSM"
-        annotation2.subtitle = "conveniências"
-        
-        let annotation3 = MKPointAnnotation()
-        annotation3.coordinate = CLLocationCoordinate2D(latitude:-29.713931,longitude:-53.714774)
-        annotation3.title = "Xis do HUSM"
-        annotation3.subtitle = "lanches e almoços"
-        
-        let annotation4 = MKPointAnnotation()
-        annotation4.coordinate = CLLocationCoordinate2D(latitude:-29.715718,longitude:-53.715030)
-        annotation4.title = "Lancheria do CCNE"
-        annotation4.subtitle = "lanches"
         
         /*
          let myActualSpot = MKPointAnnotation()
@@ -70,10 +80,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
          myActualSpot.title = "Estou aqui :)"
          myActualSpot.subtitle = "tem lanche?"
          */
-        Map.addAnnotation(annotation)
-        Map.addAnnotation(annotation2)
-        Map.addAnnotation(annotation3)
-        Map.addAnnotation(annotation4)
+
         Map.delegate = self
         // Map.addAnnotation(myActualSpot)
 
@@ -90,22 +97,17 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         if pinView == nil {
             pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
             pinView!.canShowCallout = true
-            pinView!.animatesDrop = true
-            pinView!.calloutOffset = CGPoint(x: -5, y: 5)
             pinView?.pinTintColor = .orange
             let calloutButton = UIButton(type: .detailDisclosure)
             pinView!.rightCalloutAccessoryView = calloutButton
-            pinView!.sizeToFit()
+            pinView!.animatesDrop = true
         }
         else {
             pinView!.annotation = annotation
         }
         
-        
         return pinView
     }
-    
-    
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         if control == view.rightCalloutAccessoryView {
@@ -121,7 +123,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             _ = segue!.destination as! InfoViewController
             
         }
-        
     }
 
     
