@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CF5C0D5B1D89C6B3007BC1A2"
-               BuildableName = "SnackSpot01.app"
-               BlueprintName = "SnackSpot01"
-               ReferencedContainer = "container:SnackSpot01.xcodeproj">
+               BuildableName = "SnackSpot.app"
+               BlueprintName = "SnackSpot"
+               ReferencedContainer = "container:SnackSpot.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CF5C0D6F1D89C6B3007BC1A2"
-               BuildableName = "SnackSpot01Tests.xctest"
-               BlueprintName = "SnackSpot01Tests"
-               ReferencedContainer = "container:SnackSpot01.xcodeproj">
+               BuildableName = "SnackSpotTests.xctest"
+               BlueprintName = "SnackSpotTests"
+               ReferencedContainer = "container:SnackSpot.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CF5C0D7A1D89C6B3007BC1A2"
-               BuildableName = "SnackSpot01UITests.xctest"
-               BlueprintName = "SnackSpot01UITests"
-               ReferencedContainer = "container:SnackSpot01.xcodeproj">
+               BuildableName = "SnackSpotUITests.xctest"
+               BlueprintName = "SnackSpotUITests"
+               ReferencedContainer = "container:SnackSpot.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -53,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CF5C0D5B1D89C6B3007BC1A2"
-            BuildableName = "SnackSpot01.app"
-            BlueprintName = "SnackSpot01"
-            ReferencedContainer = "container:SnackSpot01.xcodeproj">
+            BuildableName = "SnackSpot.app"
+            BlueprintName = "SnackSpot"
+            ReferencedContainer = "container:SnackSpot.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CF5C0D5B1D89C6B3007BC1A2"
-            BuildableName = "SnackSpot01.app"
-            BlueprintName = "SnackSpot01"
-            ReferencedContainer = "container:SnackSpot01.xcodeproj">
+            BuildableName = "SnackSpot.app"
+            BlueprintName = "SnackSpot"
+            ReferencedContainer = "container:SnackSpot.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,9 +95,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CF5C0D5B1D89C6B3007BC1A2"
-            BuildableName = "SnackSpot01.app"
-            BlueprintName = "SnackSpot01"
-            ReferencedContainer = "container:SnackSpot01.xcodeproj">
+            BuildableName = "SnackSpot.app"
+            BlueprintName = "SnackSpot"
+            ReferencedContainer = "container:SnackSpot.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

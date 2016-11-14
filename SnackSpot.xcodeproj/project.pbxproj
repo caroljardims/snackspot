@@ -44,17 +44,17 @@
 
 /* Begin PBXFileReference section */
 		CF1CF7D61DDA2F43008CB962 /* pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin.png; sourceTree = "<group>"; };
-		CF5C0D5C1D89C6B3007BC1A2 /* SnackSpot01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnackSpot01.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF5C0D5C1D89C6B3007BC1A2 /* SnackSpot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnackSpot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF5C0D5F1D89C6B3007BC1A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF5C0D611D89C6B3007BC1A2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CF5C0D641D89C6B3007BC1A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CF5C0D661D89C6B3007BC1A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF5C0D691D89C6B3007BC1A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF5C0D6B1D89C6B3007BC1A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CF5C0D701D89C6B3007BC1A2 /* SnackSpot01Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnackSpot01Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF5C0D701D89C6B3007BC1A2 /* SnackSpotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnackSpotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF5C0D741D89C6B3007BC1A2 /* SnackSpot01Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackSpot01Tests.swift; sourceTree = "<group>"; };
 		CF5C0D761D89C6B3007BC1A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CF5C0D7B1D89C6B3007BC1A2 /* SnackSpot01UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnackSpot01UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF5C0D7B1D89C6B3007BC1A2 /* SnackSpotUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnackSpotUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF5C0D7F1D89C6B3007BC1A2 /* SnackSpot01UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackSpot01UITests.swift; sourceTree = "<group>"; };
 		CF5C0D811D89C6B3007BC1A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF5F75071DD644F800F7B519 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
@@ -105,9 +105,9 @@
 		CF5C0D5D1D89C6B3007BC1A2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CF5C0D5C1D89C6B3007BC1A2 /* SnackSpot01.app */,
-				CF5C0D701D89C6B3007BC1A2 /* SnackSpot01Tests.xctest */,
-				CF5C0D7B1D89C6B3007BC1A2 /* SnackSpot01UITests.xctest */,
+				CF5C0D5C1D89C6B3007BC1A2 /* SnackSpot.app */,
+				CF5C0D701D89C6B3007BC1A2 /* SnackSpotTests.xctest */,
+				CF5C0D7B1D89C6B3007BC1A2 /* SnackSpotUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -163,9 +163,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CF5C0D5B1D89C6B3007BC1A2 /* SnackSpot01 */ = {
+		CF5C0D5B1D89C6B3007BC1A2 /* SnackSpot */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CF5C0D841D89C6B3007BC1A2 /* Build configuration list for PBXNativeTarget "SnackSpot01" */;
+			buildConfigurationList = CF5C0D841D89C6B3007BC1A2 /* Build configuration list for PBXNativeTarget "SnackSpot" */;
 			buildPhases = (
 				CF5C0D581D89C6B2007BC1A2 /* Sources */,
 				CF5C0D591D89C6B2007BC1A2 /* Frameworks */,
@@ -175,14 +175,14 @@
 			);
 			dependencies = (
 			);
-			name = SnackSpot01;
+			name = SnackSpot;
 			productName = SnackSpot01;
-			productReference = CF5C0D5C1D89C6B3007BC1A2 /* SnackSpot01.app */;
+			productReference = CF5C0D5C1D89C6B3007BC1A2 /* SnackSpot.app */;
 			productType = "com.apple.product-type.application";
 		};
-		CF5C0D6F1D89C6B3007BC1A2 /* SnackSpot01Tests */ = {
+		CF5C0D6F1D89C6B3007BC1A2 /* SnackSpotTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CF5C0D871D89C6B3007BC1A2 /* Build configuration list for PBXNativeTarget "SnackSpot01Tests" */;
+			buildConfigurationList = CF5C0D871D89C6B3007BC1A2 /* Build configuration list for PBXNativeTarget "SnackSpotTests" */;
 			buildPhases = (
 				CF5C0D6C1D89C6B3007BC1A2 /* Sources */,
 				CF5C0D6D1D89C6B3007BC1A2 /* Frameworks */,
@@ -193,14 +193,14 @@
 			dependencies = (
 				CF5C0D721D89C6B3007BC1A2 /* PBXTargetDependency */,
 			);
-			name = SnackSpot01Tests;
+			name = SnackSpotTests;
 			productName = SnackSpot01Tests;
-			productReference = CF5C0D701D89C6B3007BC1A2 /* SnackSpot01Tests.xctest */;
+			productReference = CF5C0D701D89C6B3007BC1A2 /* SnackSpotTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		CF5C0D7A1D89C6B3007BC1A2 /* SnackSpot01UITests */ = {
+		CF5C0D7A1D89C6B3007BC1A2 /* SnackSpotUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CF5C0D8A1D89C6B3007BC1A2 /* Build configuration list for PBXNativeTarget "SnackSpot01UITests" */;
+			buildConfigurationList = CF5C0D8A1D89C6B3007BC1A2 /* Build configuration list for PBXNativeTarget "SnackSpotUITests" */;
 			buildPhases = (
 				CF5C0D771D89C6B3007BC1A2 /* Sources */,
 				CF5C0D781D89C6B3007BC1A2 /* Frameworks */,
@@ -211,9 +211,9 @@
 			dependencies = (
 				CF5C0D7D1D89C6B3007BC1A2 /* PBXTargetDependency */,
 			);
-			name = SnackSpot01UITests;
+			name = SnackSpotUITests;
 			productName = SnackSpot01UITests;
-			productReference = CF5C0D7B1D89C6B3007BC1A2 /* SnackSpot01UITests.xctest */;
+			productReference = CF5C0D7B1D89C6B3007BC1A2 /* SnackSpotUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -242,7 +242,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CF5C0D571D89C6B2007BC1A2 /* Build configuration list for PBXProject "SnackSpot01" */;
+			buildConfigurationList = CF5C0D571D89C6B2007BC1A2 /* Build configuration list for PBXProject "SnackSpot" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -255,9 +255,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CF5C0D5B1D89C6B3007BC1A2 /* SnackSpot01 */,
-				CF5C0D6F1D89C6B3007BC1A2 /* SnackSpot01Tests */,
-				CF5C0D7A1D89C6B3007BC1A2 /* SnackSpot01UITests */,
+				CF5C0D5B1D89C6B3007BC1A2 /* SnackSpot */,
+				CF5C0D6F1D89C6B3007BC1A2 /* SnackSpotTests */,
+				CF5C0D7A1D89C6B3007BC1A2 /* SnackSpotUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -329,12 +329,12 @@
 /* Begin PBXTargetDependency section */
 		CF5C0D721D89C6B3007BC1A2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CF5C0D5B1D89C6B3007BC1A2 /* SnackSpot01 */;
+			target = CF5C0D5B1D89C6B3007BC1A2 /* SnackSpot */;
 			targetProxy = CF5C0D711D89C6B3007BC1A2 /* PBXContainerItemProxy */;
 		};
 		CF5C0D7D1D89C6B3007BC1A2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CF5C0D5B1D89C6B3007BC1A2 /* SnackSpot01 */;
+			target = CF5C0D5B1D89C6B3007BC1A2 /* SnackSpot */;
 			targetProxy = CF5C0D7C1D89C6B3007BC1A2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -482,7 +482,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = testes.SnackSpot01Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SnackSpot01.app/SnackSpot01";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SnackSpot.app/SnackSpot";
 			};
 			name = Debug;
 		};
@@ -495,7 +495,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = testes.SnackSpot01Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SnackSpot01.app/SnackSpot01";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SnackSpot.app/SnackSpot";
 			};
 			name = Release;
 		};
@@ -526,7 +526,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CF5C0D571D89C6B2007BC1A2 /* Build configuration list for PBXProject "SnackSpot01" */ = {
+		CF5C0D571D89C6B2007BC1A2 /* Build configuration list for PBXProject "SnackSpot" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CF5C0D821D89C6B3007BC1A2 /* Debug */,
@@ -535,7 +535,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CF5C0D841D89C6B3007BC1A2 /* Build configuration list for PBXNativeTarget "SnackSpot01" */ = {
+		CF5C0D841D89C6B3007BC1A2 /* Build configuration list for PBXNativeTarget "SnackSpot" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CF5C0D851D89C6B3007BC1A2 /* Debug */,
@@ -544,7 +544,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CF5C0D871D89C6B3007BC1A2 /* Build configuration list for PBXNativeTarget "SnackSpot01Tests" */ = {
+		CF5C0D871D89C6B3007BC1A2 /* Build configuration list for PBXNativeTarget "SnackSpotTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CF5C0D881D89C6B3007BC1A2 /* Debug */,
@@ -553,7 +553,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CF5C0D8A1D89C6B3007BC1A2 /* Build configuration list for PBXNativeTarget "SnackSpot01UITests" */ = {
+		CF5C0D8A1D89C6B3007BC1A2 /* Build configuration list for PBXNativeTarget "SnackSpotUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CF5C0D8B1D89C6B3007BC1A2 /* Debug */,
