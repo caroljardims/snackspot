@@ -10,7 +10,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SnackSpot01" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SnackSpot" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -64,7 +64,7 @@
         <!--Info View Controller-->
         <scene sceneID="ahY-3X-I9V">
             <objects>
-                <viewController id="Tnd-LR-JIS" customClass="InfoViewController" customModule="SnackSpot01" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Tnd-LR-JIS" customClass="InfoViewController" customModule="SnackSpot" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lTw-l5-bil"/>
                         <viewControllerLayoutGuide type="bottom" id="Ga3-Pd-gkq"/>
@@ -74,7 +74,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Foodtruck da Maria e do José" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beJ-GG-RZI">
-                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="22"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -123,17 +123,36 @@
                                     <constraint firstAttribute="height" constant="173" id="1oT-Zy-hue"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="foodtruck.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="zQG-s9-6oZ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="foodtruck.png" translatesAutoresizingMaskIntoConstraints="NO" id="zQG-s9-6oZ">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="156" id="HHY-L0-O6Q"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Servimos:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZu-P6-cJY">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="111" id="F3I-Og-ozU"/>
+                                    <constraint firstAttribute="height" constant="22" id="IvJ-iP-6g1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gg9-ir-DRF">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="125" id="v2Y-tt-Cr3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="15"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.40000000000000002" blue="0.41176470588235292" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="zQG-s9-6oZ" firstAttribute="trailing" secondItem="hLh-fA-9ca" secondAttribute="trailingMargin" id="3ma-XJ-yOs"/>
                             <constraint firstItem="PIO-xC-4oN" firstAttribute="leading" secondItem="ypo-iq-bRX" secondAttribute="trailing" constant="8" id="4cd-Rt-7JH"/>
+                            <constraint firstItem="Gg9-ir-DRF" firstAttribute="leading" secondItem="hLh-fA-9ca" secondAttribute="leadingMargin" id="4sC-SM-5AE"/>
                             <constraint firstItem="ypo-iq-bRX" firstAttribute="centerX" secondItem="hLh-fA-9ca" secondAttribute="centerX" id="57p-Vd-Ub4"/>
+                            <constraint firstItem="Gg9-ir-DRF" firstAttribute="trailing" secondItem="hLh-fA-9ca" secondAttribute="trailingMargin" id="7qA-hG-iX2"/>
                             <constraint firstItem="fgK-5S-ych" firstAttribute="top" secondItem="beJ-GG-RZI" secondAttribute="bottom" constant="14.67" id="9dH-OM-rkK"/>
                             <constraint firstItem="PhR-2Q-VVK" firstAttribute="leading" secondItem="hLh-fA-9ca" secondAttribute="leadingMargin" id="9lI-uB-jjd"/>
                             <constraint firstItem="eL5-Wk-dZ1" firstAttribute="top" secondItem="lTw-l5-bil" secondAttribute="bottom" id="B0o-5Y-TPi"/>
@@ -141,6 +160,7 @@
                             <constraint firstItem="PhR-2Q-VVK" firstAttribute="top" secondItem="eL5-Wk-dZ1" secondAttribute="bottom" constant="8" id="H8E-tc-NQc"/>
                             <constraint firstItem="eL5-Wk-dZ1" firstAttribute="leading" secondItem="hLh-fA-9ca" secondAttribute="leadingMargin" id="PJC-4d-b3G"/>
                             <constraint firstItem="zQG-s9-6oZ" firstAttribute="leading" secondItem="hLh-fA-9ca" secondAttribute="leadingMargin" id="Pmx-ZK-Byk"/>
+                            <constraint firstItem="cZu-P6-cJY" firstAttribute="centerX" secondItem="hLh-fA-9ca" secondAttribute="centerX" id="S0n-xk-ycW"/>
                             <constraint firstItem="JRO-uh-YsV" firstAttribute="top" secondItem="beJ-GG-RZI" secondAttribute="bottom" constant="14.67" id="UER-JV-ba8"/>
                             <constraint firstItem="beJ-GG-RZI" firstAttribute="leading" secondItem="hLh-fA-9ca" secondAttribute="leadingMargin" id="Y0f-CW-YUy"/>
                             <constraint firstItem="JRO-uh-YsV" firstAttribute="leading" secondItem="fgK-5S-ych" secondAttribute="trailing" constant="8" id="bbb-FJ-1Pr"/>
@@ -150,20 +170,26 @@
                             <constraint firstItem="beJ-GG-RZI" firstAttribute="trailing" secondItem="hLh-fA-9ca" secondAttribute="trailingMargin" id="j5O-fs-ody"/>
                             <constraint firstItem="zei-ID-hVu" firstAttribute="top" secondItem="beJ-GG-RZI" secondAttribute="bottom" constant="14.67" id="kKa-2c-mcN"/>
                             <constraint firstItem="zQG-s9-6oZ" firstAttribute="top" secondItem="eL5-Wk-dZ1" secondAttribute="bottom" constant="16" id="ng5-zJ-HT3"/>
+                            <constraint firstItem="Gg9-ir-DRF" firstAttribute="top" secondItem="cZu-P6-cJY" secondAttribute="bottom" constant="17" id="pHP-vh-KoU"/>
                             <constraint firstItem="zei-ID-hVu" firstAttribute="leading" secondItem="PIO-xC-4oN" secondAttribute="trailing" constant="8" id="qPP-vt-ePU"/>
                             <constraint firstItem="PIO-xC-4oN" firstAttribute="top" secondItem="beJ-GG-RZI" secondAttribute="bottom" constant="14.67" id="uhp-Mw-h20"/>
+                            <constraint firstItem="cZu-P6-cJY" firstAttribute="top" secondItem="PIO-xC-4oN" secondAttribute="bottom" constant="28" id="wBk-Kz-kpY"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="name" destination="beJ-GG-RZI" id="0o6-7s-RP9"/>
+                        <outlet property="servimos" destination="Gg9-ir-DRF" id="2b4-BJ-Sii"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ngk-uI-2HH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="985.50724637681162" y="416.57608695652175"/>
+            <point key="canvasLocation" x="1111.5942028985507" y="416.57608695652175"/>
         </scene>
     </scenes>
     <resources>
         <image name="backbutton.png" width="206" height="379"/>
         <image name="background.png" width="1280" height="583"/>
-        <image name="foodtruck.jpg" width="818" height="430"/>
+        <image name="foodtruck.png" width="580" height="291"/>
         <image name="icons-04-2.png" width="102" height="98"/>
         <image name="icons-04.png" width="104" height="99"/>
         <image name="nome.png" width="311" height="119"/>

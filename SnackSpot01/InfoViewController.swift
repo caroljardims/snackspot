@@ -10,10 +10,17 @@ import UIKit
 
 class InfoViewController: UIViewController {
 
+    
+    var infos:[[String]] = []
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var servimos: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        print(infos)
+        name.text = infos[0][1]
     }
 
     override func didReceiveMemoryWarning() {

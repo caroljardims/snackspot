@@ -13,10 +13,11 @@ import CoreLocation
 class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     
-
+    
     @IBOutlet weak var Map: MKMapView!
     let locationManager = CLLocationManager()
-    
+    var placesData:[[String]] = []
+    var parameters:[[String]] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,17 +39,28 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
                     let json = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! [String: AnyObject]
                     if let places = json["places"] as? [[String : AnyObject]] {
                         for place in places {
-                           if let title = place["title"] as? String {
-                               if let subtitle = place["subtitle"] as? String {
-                                    if let lati = place["latitude"] as? String {
-                                        if let long = place["longitude"] as? String {
-                                            if let aval = place["aval"] as? String {
-                                                let annotation = MKPointAnnotation()
-                                                annotation.coordinate = CLLocationCoordinate2D(latitude:Double(lati)!,longitude:Double(long)!)
-                                                annotation.title = title
-                                                annotation.subtitle = subtitle
-                                                self.Map.addAnnotation(annotation)
-                                                print(title,subtitle, lati, long, aval)
+                            if let id = place["id"] as? String {
+                                if let title = place["title"] as? String {
+                                    if let subtitle = place["subtitle"] as? String {
+                                        if let lati = place["latitude"] as? String {
+                                            if let long = place["longitude"] as? String {
+                                                if let cardapio = place["cardapio"] as? String{
+                                                    if let aval = place["aval"] as? String {
+                                                        var data:[String] = []
+                                                        data.append(id)
+                                                        data.append(title)
+                                                        data.append(subtitle)
+                                                        data.append(lati)
+                                                        data.append(long)
+                                                        data.append(cardapio)
+                                                        data.append(aval)
+                                                        print(id)
+                                                        print(title)
+                                                        print(subtitle)
+                                                        print(cardapio)
+                                                        self.placesData.append(data)
+                                                    }
+                                                }
                                             }
                                         }
                                     }
@@ -62,6 +74,22 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
                 }
                 
             } else { print(" Deu Merda!") }
+            
+            for d in self.placesData {
+                print()
+                print()
+                print()
+                print()
+                print()
+                print(d)
+                let annotation = MKPointAnnotation()
+                annotation.title = d[1]
+                annotation.subtitle = d[2]
+                annotation.coordinate = CLLocationCoordinate2D(latitude:Double(d[3])!,longitude:Double(d[4])!)
+                self.Map.addAnnotation(annotation)
+                
+            }
+            
         }
         
         task.resume()
@@ -80,10 +108,10 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
          myActualSpot.title = "Estou aqui :)"
          myActualSpot.subtitle = "tem lanche?"
          */
-
+        
         Map.delegate = self
         // Map.addAnnotation(myActualSpot)
-
+        
         
     }
     
@@ -101,8 +129,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             let calloutButton = UIButton(type: .detailDisclosure)
             pinView!.rightCalloutAccessoryView = calloutButton
             pinView!.animatesDrop = true
-        }
-        else {
+        } else {
             pinView!.annotation = annotation
         }
         
@@ -110,21 +137,31 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     }
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        
         if control == view.rightCalloutAccessoryView {
             print("SHOW TOP SEXTOU")
-            performSegue(withIdentifier: "Info", sender: view)
+            print(view.annotation?.title) // annotation's title
+            print(view.annotation?.subtitle)
+            print(view.annotation?.coordinate)
+            for d in placesData{
+                if view.annotation?.coordinate.latitude == Double(d[3]) && view.annotation?.coordinate.longitude == Double(d[4]) {
+                    print("YEAH")
+                    parameters.append(d)
+                }
+            }
+            
+            self.performSegue(withIdentifier: "Info", sender: self)
+            
         }
     }
     
-    func prepare(for segue: UIStoryboardSegue?, sender: AnyObject?) {
-        
-        if (segue?.identifier == "Info") {
-            
-            _ = segue!.destination as! InfoViewController
-            
+    override func prepare(for segue: UIStoryboardSegue?, sender: Any?) {
+        if segue?.identifier == "Info" {
+            let sendId = segue?.destination as! InfoViewController
+            sendId.infos = self.parameters
         }
     }
-
+    
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
     {

@@ -18,14 +18,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="marcaSS1.png" translatesAutoresizingMaskIntoConstraints="NO" id="Pbb-2t-z0K"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="marcaSS1.png" translatesAutoresizingMaskIntoConstraints="NO" id="Pbb-2t-z0K">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="256" id="9Yc-pE-TJv"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Pbb-2t-z0K" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="AlS-z9-deB"/>
-                            <constraint firstAttribute="trailing" secondItem="Pbb-2t-z0K" secondAttribute="trailing" id="TAI-S1-jaw"/>
-                            <constraint firstItem="Pbb-2t-z0K" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="UXe-MH-aeB"/>
+                            <constraint firstItem="Pbb-2t-z0K" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Xdo-QR-Y4u"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="Pbb-2t-z0K" secondAttribute="bottom" id="oRZ-Pa-0hX"/>
+                            <constraint firstItem="Pbb-2t-z0K" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="pmn-oY-Shp"/>
                         </constraints>
                     </view>
                 </viewController>
