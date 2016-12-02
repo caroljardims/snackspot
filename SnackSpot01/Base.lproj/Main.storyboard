@@ -102,7 +102,7 @@
                                     <constraint firstAttribute="height" constant="28" id="Ygt-YO-X8K"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons-04-2.png" translatesAutoresizingMaskIntoConstraints="NO" id="zei-ID-hVu">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons-04.png" translatesAutoresizingMaskIntoConstraints="NO" id="zei-ID-hVu">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="32" id="FEa-Ce-YK9"/>
                                     <constraint firstAttribute="height" constant="28" id="PtI-sx-d1W"/>
@@ -195,7 +195,6 @@
         <image name="backbutton.png" width="206" height="379"/>
         <image name="background.png" width="1280" height="583"/>
         <image name="foodtruck.png" width="580" height="291"/>
-        <image name="icons-04-2.png" width="102" height="98"/>
         <image name="icons-04.png" width="104" height="99"/>
         <image name="nome.png" width="311" height="119"/>
     </resources>

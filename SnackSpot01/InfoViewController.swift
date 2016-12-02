@@ -41,6 +41,7 @@ class InfoViewController: UIViewController {
     }
     
     func starRate(){
+        
         if aval < 2{
             star1.image = UIImage(named: "icons-04")
             star2.image = UIImage(named: "icons-04-2")
@@ -68,13 +69,6 @@ class InfoViewController: UIViewController {
             star3.image = UIImage(named: "icons-04")
             star4.image = UIImage(named: "icons-04")
             star5.image = UIImage(named: "icons-04-2")
-        }
-        else {
-            star1.image = UIImage(named: "icons-04")
-            star2.image = UIImage(named: "icons-04")
-            star3.image = UIImage(named: "icons-04")
-            star4.image = UIImage(named: "icons-04")
-            star5.image = UIImage(named: "icons-04")
         }
     }
     
