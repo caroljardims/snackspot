@@ -24,6 +24,8 @@
 		CF5F751F1DD6661100F7B519 /* nome.png in Resources */ = {isa = PBXBuildFile; fileRef = CF5F751E1DD6661100F7B519 /* nome.png */; };
 		CF5F75231DD66CFE00F7B519 /* marcaSS1.png in Resources */ = {isa = PBXBuildFile; fileRef = CF5F75221DD66CFE00F7B519 /* marcaSS1.png */; };
 		CF7CAD2B1DF0976A000537BA /* foodtruck.png in Resources */ = {isa = PBXBuildFile; fileRef = CF7CAD2A1DF0976A000537BA /* foodtruck.png */; };
+		CF8481021DF1E53200586412 /* checkinbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = CF8481011DF1E53200586412 /* checkinbutton.png */; };
+		CF8481041DF1E66300586412 /* addhere.png in Resources */ = {isa = PBXBuildFile; fileRef = CF8481031DF1E66300586412 /* addhere.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		CF5F751E1DD6661100F7B519 /* nome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nome.png; sourceTree = "<group>"; };
 		CF5F75221DD66CFE00F7B519 /* marcaSS1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = marcaSS1.png; sourceTree = "<group>"; };
 		CF7CAD2A1DF0976A000537BA /* foodtruck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = foodtruck.png; sourceTree = "<group>"; };
+		CF8481011DF1E53200586412 /* checkinbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkinbutton.png; sourceTree = "<group>"; };
+		CF8481031DF1E66300586412 /* addhere.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addhere.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +155,8 @@
 			isa = PBXGroup;
 			children = (
 				CF7CAD2A1DF0976A000537BA /* foodtruck.png */,
+				CF8481031DF1E66300586412 /* addhere.png */,
+				CF8481011DF1E53200586412 /* checkinbutton.png */,
 				CF1CF7D61DDA2F43008CB962 /* pin.png */,
 				CF5F75221DD66CFE00F7B519 /* marcaSS1.png */,
 				CF5F75121DD64D9A00F7B519 /* backbutton.png */,
@@ -273,6 +279,7 @@
 				CF5C0D6A1D89C6B3007BC1A2 /* LaunchScreen.storyboard in Resources */,
 				CF5F751D1DD6549600F7B519 /* background.png in Resources */,
 				CF5F751F1DD6661100F7B519 /* nome.png in Resources */,
+				CF8481041DF1E66300586412 /* addhere.png in Resources */,
 				CF5F750B1DD6479800F7B519 /* foodtruck.jpg in Resources */,
 				CF5F75131DD64D9A00F7B519 /* backbutton.png in Resources */,
 				CF5F750F1DD6497C00F7B519 /* icons-04.png in Resources */,
@@ -280,6 +287,7 @@
 				CF1CF7D71DDA2F43008CB962 /* pin.png in Resources */,
 				CF5C0D651D89C6B3007BC1A2 /* Main.storyboard in Resources */,
 				CF7CAD2B1DF0976A000537BA /* foodtruck.png in Resources */,
+				CF8481021DF1E53200586412 /* checkinbutton.png in Resources */,
 				CF5F75231DD66CFE00F7B519 /* marcaSS1.png in Resources */,
 				CF5F750E1DD6497C00F7B519 /* icons-04-2.png in Resources */,
 			);
