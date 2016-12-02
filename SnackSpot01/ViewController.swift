@@ -17,7 +17,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     @IBOutlet weak var Map: MKMapView!
     let locationManager = CLLocationManager()
     var placesData:[[String]] = []
-    var parameters:[[String]] = []
+    var parameters:[String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,10 +54,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
                                                         data.append(long)
                                                         data.append(cardapio)
                                                         data.append(aval)
-                                                        print(id)
-                                                        print(title)
-                                                        print(subtitle)
-                                                        print(cardapio)
                                                         self.placesData.append(data)
                                                     }
                                                 }
@@ -76,12 +72,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             } else { print(" Deu Merda!") }
             
             for d in self.placesData {
-                print()
-                print()
-                print()
-                print()
-                print()
-                print(d)
                 let annotation = MKPointAnnotation()
                 annotation.title = d[1]
                 annotation.subtitle = d[2]
@@ -140,13 +130,9 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         if control == view.rightCalloutAccessoryView {
             print("SHOW TOP SEXTOU")
-            print(view.annotation?.title) // annotation's title
-            print(view.annotation?.subtitle)
-            print(view.annotation?.coordinate)
             for d in placesData{
                 if view.annotation?.coordinate.latitude == Double(d[3]) && view.annotation?.coordinate.longitude == Double(d[4]) {
-                    print("YEAH")
-                    parameters.append(d)
+                    parameters = d
                 }
             }
             

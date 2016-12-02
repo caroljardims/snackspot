@@ -137,7 +137,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gg9-ir-DRF">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="comidinhas" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gg9-ir-DRF">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="125" id="v2Y-tt-Cr3"/>
                                 </constraints>
@@ -179,6 +179,11 @@
                     <connections>
                         <outlet property="name" destination="beJ-GG-RZI" id="0o6-7s-RP9"/>
                         <outlet property="servimos" destination="Gg9-ir-DRF" id="2b4-BJ-Sii"/>
+                        <outlet property="star1" destination="fgK-5S-ych" id="IGU-Lz-j79"/>
+                        <outlet property="star2" destination="JRO-uh-YsV" id="6VS-bM-wns"/>
+                        <outlet property="star3" destination="ypo-iq-bRX" id="fL8-IF-h67"/>
+                        <outlet property="star4" destination="PIO-xC-4oN" id="7Fy-AQ-dnw"/>
+                        <outlet property="star5" destination="zei-ID-hVu" id="G7w-D4-6et"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ngk-uI-2HH" userLabel="First Responder" sceneMemberID="firstResponder"/>
