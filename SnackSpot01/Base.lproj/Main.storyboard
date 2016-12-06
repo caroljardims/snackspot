@@ -25,13 +25,17 @@
                                     <constraint firstAttribute="height" constant="44" id="go8-QK-1UJ"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="ehV-OW-iRi"/>
                                     <barButtonItem image="addhere.png" id="aaA-vR-rKh">
                                         <connections>
                                             <segue destination="XQo-gQ-LTw" kind="show" identifier="AddScreen" id="UUl-Tv-wNe"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="AEw-CT-2W0"/>
+                                    <barButtonItem image="cade.png" id="3eo-3m-sxH">
+                                        <connections>
+                                            <action selector="whereUser:" destination="BYZ-38-t0r" id="kgS-Bp-PeU"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                                 <color key="tintColor" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
@@ -413,7 +417,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fjh-sS-cTf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="169" y="1245"/>
+            <point key="canvasLocation" x="168.80000000000001" y="1244.527736131934"/>
         </scene>
     </scenes>
     <resources>
@@ -422,6 +426,7 @@
         <image name="backbutton.png" width="206" height="379"/>
         <image name="background.png" width="1280" height="583"/>
         <image name="byu8ituwmfc-israel-sundseth.jpg" width="2164" height="1440"/>
+        <image name="cade.png" width="91" height="44"/>
         <image name="cancelbutton.png" width="83" height="44"/>
         <image name="checkinbutton.png" width="121" height="44"/>
         <image name="draw-chakboard.png" width="350" height="55"/>
@@ -432,6 +437,6 @@
         <image name="nome.png" width="311" height="119"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hll-01-qQl"/>
+        <segue reference="cdk-Pe-1oA"/>
     </inferredMetricsTieBreakers>
 </document>

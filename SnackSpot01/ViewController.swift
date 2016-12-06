@@ -16,6 +16,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     @IBOutlet weak var Map: MKMapView!
     
+    
     let locationManager = CLLocationManager()
     var placesData:[[String]] = []
     var parameters:[String] = []
@@ -131,35 +132,53 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
     }
     
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView?
-    {
-        if annotation is MKUserLocation {return nil}
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
-        let reuseId = "pin"
+        //se l'annotation è la posizione dell'Utente allora esci dalla funzione e mostra il punto blu
+        if annotation is MKUserLocation {
+            return nil
+        }
         
-        var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView
+        //creo un id da associare ad ogni annotationView
+        let reuseId = "ponto"
+        //se esistono troppi punti nella mappa, prende quello non visto e lo riutilizza nella porzione di mappa vista
+        var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId)
+        
+        //se non è stata ancora creata un'AnnotationView la crea
         if pinView == nil {
-            pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
-            pinView!.canShowCallout = true
+            //creo un pin di tipo MKAnnotationView che rappresenta l'oggetto reale da inserire in mappa
+            pinView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+            //cambio l'immagine standard del point annotation con una creata da me
+            pinView!.image = UIImage(named: "pinUnchecked")
+            
             if self.checkin != "" {
                 let aux = self.checkin.components(separatedBy: ";;")
                 if aux[0] == String(format: "%f", annotation.coordinate.latitude) && aux[1] == String(format: "%f", annotation.coordinate.longitude){
-                    pinView?.pinTintColor = .green
+                    pinView?.image = UIImage(named: "pinChecked")
                 } else {
-                    pinView?.pinTintColor = .orange
+                    pinView!.image = UIImage(named: "pinUnchecked")
                 }
             } else {
-                pinView?.pinTintColor = .orange
+                pinView!.image = UIImage(named: "pinUnchecked")
             }
+            
+            //sblocco la possibilità di cliccarlo per vedere i dettagli
+            pinView!.canShowCallout = true
             let calloutButton = UIButton(type: .detailDisclosure)
             pinView!.rightCalloutAccessoryView = calloutButton
-            pinView!.animatesDrop = true
-        } else {
+        }
+        else {
+            //se esiste lo modifico con il nuovo point richiesto
             pinView!.annotation = annotation
         }
-        
+        //restituisce un pointAnnotation nuovo o modificato
         return pinView
     }
+
+    
+//    let calloutButton = UIButton(type: .detailDisclosure)
+//    pinView!.rightCalloutAccessoryView = calloutButton
+//    pinView!.animatesDrop = true
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         
@@ -182,6 +201,8 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             sendId.infos = self.parameters
         }
         if segue?.identifier == "AddScreen" {
+            self.locationManager.startUpdatingLocation()
+            self.userLocation = self.locationManager.location?.coordinate
             let sendId = segue?.destination as! AddPlaceViewController
             sendId.userLocation = self.userLocation
 
@@ -199,11 +220,15 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
     }
     
+    @IBAction func whereUser(_ sender: AnyObject) {
+        self.locationManager.startUpdatingLocation()
+        self.userLocation = self.locationManager.location?.coordinate
+    }
+
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)
     {
         print("Errors: " + error.localizedDescription)
     }
     
 }
-
 
