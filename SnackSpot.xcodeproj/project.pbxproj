@@ -23,12 +23,12 @@
 		CF5F751D1DD6549600F7B519 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = CF5F751C1DD6549600F7B519 /* background.png */; };
 		CF5F751F1DD6661100F7B519 /* nome.png in Resources */ = {isa = PBXBuildFile; fileRef = CF5F751E1DD6661100F7B519 /* nome.png */; };
 		CF5F75231DD66CFE00F7B519 /* marcaSS1.png in Resources */ = {isa = PBXBuildFile; fileRef = CF5F75221DD66CFE00F7B519 /* marcaSS1.png */; };
+		CF7A89EB1DF7460900C82BAA /* AddPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7A89EA1DF7460900C82BAA /* AddPlaceViewController.swift */; };
 		CF7CAD2B1DF0976A000537BA /* foodtruck.png in Resources */ = {isa = PBXBuildFile; fileRef = CF7CAD2A1DF0976A000537BA /* foodtruck.png */; };
 		CF8481021DF1E53200586412 /* checkinbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = CF8481011DF1E53200586412 /* checkinbutton.png */; };
 		CF8481041DF1E66300586412 /* addhere.png in Resources */ = {isa = PBXBuildFile; fileRef = CF8481031DF1E66300586412 /* addhere.png */; };
 		CF8481061DF2137700586412 /* addbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = CF8481051DF2137700586412 /* addbutton.png */; };
 		CF8481081DF2142900586412 /* cancelbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = CF8481071DF2142900586412 /* cancelbutton.png */; };
-		CF9D206D1DF5C55B00EA4B65 /* AddPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9D206C1DF5C55B00EA4B65 /* AddPlaceViewController.swift */; };
 		CF9D206F1DF5E7B700EA4B65 /* byu8ituwmfc-israel-sundseth.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CF9D206E1DF5E7B700EA4B65 /* byu8ituwmfc-israel-sundseth.jpg */; };
 		CF9D20711DF5EA1200EA4B65 /* nkrvmvjw3re-rafael-fabricio.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CF9D20701DF5EA1200EA4B65 /* nkrvmvjw3re-rafael-fabricio.jpg */; };
 		CF9D20731DF5EDB200EA4B65 /* draw-chakboard.png in Resources */ = {isa = PBXBuildFile; fileRef = CF9D20721DF5EDB200EA4B65 /* draw-chakboard.png */; };
@@ -74,12 +74,12 @@
 		CF5F751C1DD6549600F7B519 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		CF5F751E1DD6661100F7B519 /* nome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nome.png; sourceTree = "<group>"; };
 		CF5F75221DD66CFE00F7B519 /* marcaSS1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = marcaSS1.png; sourceTree = "<group>"; };
+		CF7A89EA1DF7460900C82BAA /* AddPlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPlaceViewController.swift; sourceTree = "<group>"; };
 		CF7CAD2A1DF0976A000537BA /* foodtruck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = foodtruck.png; sourceTree = "<group>"; };
 		CF8481011DF1E53200586412 /* checkinbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkinbutton.png; sourceTree = "<group>"; };
 		CF8481031DF1E66300586412 /* addhere.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addhere.png; sourceTree = "<group>"; };
 		CF8481051DF2137700586412 /* addbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addbutton.png; sourceTree = "<group>"; };
 		CF8481071DF2142900586412 /* cancelbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancelbutton.png; sourceTree = "<group>"; };
-		CF9D206C1DF5C55B00EA4B65 /* AddPlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddPlaceViewController.swift; path = ../AddPlaceViewController.swift; sourceTree = "<group>"; };
 		CF9D206E1DF5E7B700EA4B65 /* byu8ituwmfc-israel-sundseth.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "byu8ituwmfc-israel-sundseth.jpg"; sourceTree = "<group>"; };
 		CF9D20701DF5EA1200EA4B65 /* nkrvmvjw3re-rafael-fabricio.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "nkrvmvjw3re-rafael-fabricio.jpg"; sourceTree = "<group>"; };
 		CF9D20721DF5EDB200EA4B65 /* draw-chakboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "draw-chakboard.png"; sourceTree = "<group>"; };
@@ -135,7 +135,7 @@
 			children = (
 				CF5F75091DD6478D00F7B519 /* images */,
 				CF5C0D5F1D89C6B3007BC1A2 /* AppDelegate.swift */,
-				CF9D206C1DF5C55B00EA4B65 /* AddPlaceViewController.swift */,
+				CF7A89EA1DF7460900C82BAA /* AddPlaceViewController.swift */,
 				CF5C0D611D89C6B3007BC1A2 /* ViewController.swift */,
 				CF5C0D631D89C6B3007BC1A2 /* Main.storyboard */,
 				CF5C0D661D89C6B3007BC1A2 /* Assets.xcassets */,
@@ -337,7 +337,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF9D206D1DF5C55B00EA4B65 /* AddPlaceViewController.swift in Sources */,
+				CF7A89EB1DF7460900C82BAA /* AddPlaceViewController.swift in Sources */,
 				CF5C0D621D89C6B3007BC1A2 /* ViewController.swift in Sources */,
 				CF5F75081DD644F800F7B519 /* InfoViewController.swift in Sources */,
 				CF5C0D601D89C6B3007BC1A2 /* AppDelegate.swift in Sources */,
