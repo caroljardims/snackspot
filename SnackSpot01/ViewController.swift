@@ -15,12 +15,40 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     
     @IBOutlet weak var Map: MKMapView!
+    
     let locationManager = CLLocationManager()
     var placesData:[[String]] = []
     var parameters:[String] = []
+    var userLocation:CLLocationCoordinate2D? = nil
+    var newLocation:String = ""
+    var checkin:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let locationsDefault = UserDefaults.standard
+        
+        
+        if locationsDefault.value(forKey: "myLocations") != nil {
+            // print("HERE I AM MOTHERFUCKER")
+            var myLocations = locationsDefault.value(forKey: "myLocations") as! [String]
+            if newLocation != "" { myLocations.append(newLocation) }
+            locationsDefault.set(myLocations, forKey: "myLocations")
+            locationsDefault.synchronize()
+            let array = locationsDefault.object(forKey: "myLocations") as! [String]
+            for x in array {
+                let new = x.components(separatedBy: ";;")
+                self.placesData.append(new)
+                // for i in new { print(i) }
+            }
+        } else {
+            if newLocation != "" {
+                locationsDefault.set([newLocation], forKey: "myLocations")
+                locationsDefault.synchronize()
+            }
+        }
+        
+        
         
         let requestURL: NSURL = NSURL(string: "https://raw.githubusercontent.com/caroljardims/snackspot/master/localinfos.js")!
         let urlRequest: NSMutableURLRequest = NSMutableURLRequest(url: requestURL as URL)
@@ -35,7 +63,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
                 print("Everyone is fine, file downloaded successfully.")
                 
                 do{
-                    
                     let json = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! [String: AnyObject]
                     if let places = json["places"] as? [[String : AnyObject]] {
                         for place in places {
@@ -64,7 +91,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
                             }
                         }
                     }
-                    
                 } catch {
                     print("Error with Json: \(error)")
                 }
@@ -72,32 +98,32 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             } else { print(" Deu Merda!") }
             
             for d in self.placesData {
+                print(d)
                 let annotation = MKPointAnnotation()
+                print(">>>>>" + self.checkin)
+                if self.checkin != "" {
+                    let aux = self.checkin.components(separatedBy: ";;")
+                    if aux[0] == d[3] && aux[1] == d[4]{
+                        annotation.subtitle = "Você está aqui!"
+                    } else {
+                        annotation.subtitle = d[2]
+                    }
+                } else {
+                    annotation.subtitle = d[2]
+                }
                 annotation.title = d[1]
-                annotation.subtitle = d[2]
                 annotation.coordinate = CLLocationCoordinate2D(latitude:Double(d[3])!,longitude:Double(d[4])!)
                 self.Map.addAnnotation(annotation)
-                
             }
-            
         }
         
         task.resume()
-        
         
         self.locationManager.delegate = self
         self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         self.locationManager.requestWhenInUseAuthorization()
         self.locationManager.startUpdatingLocation()
         self.Map.showsUserLocation = true
-        
-        
-        /*
-         let myActualSpot = MKPointAnnotation()
-         myActualSpot.coordinate = center
-         myActualSpot.title = "Estou aqui :)"
-         myActualSpot.subtitle = "tem lanche?"
-         */
         
         Map.delegate = self
         // Map.addAnnotation(myActualSpot)
@@ -115,7 +141,16 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         if pinView == nil {
             pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
             pinView!.canShowCallout = true
-            pinView?.pinTintColor = .orange
+            if self.checkin != "" {
+                let aux = self.checkin.components(separatedBy: ";;")
+                if aux[0] == String(format: "%f", annotation.coordinate.latitude) && aux[1] == String(format: "%f", annotation.coordinate.longitude){
+                    pinView?.pinTintColor = .green
+                } else {
+                    pinView?.pinTintColor = .orange
+                }
+            } else {
+                pinView?.pinTintColor = .orange
+            }
             let calloutButton = UIButton(type: .detailDisclosure)
             pinView!.rightCalloutAccessoryView = calloutButton
             pinView!.animatesDrop = true
@@ -146,8 +181,12 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             let sendId = segue?.destination as! InfoViewController
             sendId.infos = self.parameters
         }
+        if segue?.identifier == "AddScreen" {
+            let sendId = segue?.destination as! AddPlaceViewController
+            sendId.userLocation = self.userLocation
+
+        }
     }
-    
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
     {
@@ -156,6 +195,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
         self.Map.setRegion(region, animated: true)
         self.locationManager.stopUpdatingLocation()
+        self.userLocation = manager.location?.coordinate
         
     }
     

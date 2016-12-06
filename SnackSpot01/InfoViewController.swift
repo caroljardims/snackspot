@@ -12,9 +12,9 @@ class InfoViewController: UIViewController {
 
     
     var infos:[String] = []
+    var aval:Int = 0
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var servimos: UILabel!
-    var aval:Int = 0
     @IBOutlet weak var star1: UIImageView!
     @IBOutlet weak var star2: UIImageView!
     @IBOutlet weak var star3: UIImageView!
@@ -38,6 +38,14 @@ class InfoViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "CheckIn" {
+            let str = infos[3] + ";;" + infos[4]
+            let sendId = segue.destination as! ViewController
+            sendId.checkin = str
+        }
     }
     
     func starRate(){
@@ -70,6 +78,12 @@ class InfoViewController: UIViewController {
             star4.image = UIImage(named: "icons-04")
             star5.image = UIImage(named: "icons-04-2")
         }
+    }
+    
+    @IBAction func checkInButton(_ sender: AnyObject) {
+    
+        performSegue(withIdentifier: "CheckIn", sender: self)
+    
     }
     
 
