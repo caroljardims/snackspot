@@ -33,25 +33,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         let infosDefault = UserDefaults.standard
         
-        
-        if infosDefault.value(forKey: "myLocations") != nil {
-            print("HERE I AM MOTHERFUCKER")
-            var myLocations = infosDefault.value(forKey: "myLocations") as! [String]
-            if newLocation != "" { myLocations.append(newLocation) }
-            infosDefault.set(myLocations, forKey: "myLocations")
-            infosDefault.synchronize()
-            let array = infosDefault.object(forKey: "myLocations") as! [String]
-            for x in array {
-                let new = x.components(separatedBy: ";;")
-                self.placesData.append(new)
-            }
-        } else {
-            if newLocation != "" {
-                infosDefault.set([newLocation], forKey: "myLocations")
-                infosDefault.synchronize()
-            }
-        }
-        
         if !checkin.isEmpty {
             if infosDefault.value(forKey: "userCheckin") != nil {
                 var userCheckin = infosDefault.value(forKey: "userCheckin") as! [String]
@@ -66,7 +47,12 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         if infosDefault.value(forKey: "allLocations") != nil{
             
             self.placesData = infosDefault.value(forKey: "allLocations") as! [[String]]
-            
+                
+            if newLocation != "" {
+                let new = newLocation.components(separatedBy: ";;")
+                self.placesData.append(new)
+            }
+
             for d in self.placesData {
                 //                print(d)
                 let annotation = MKPointAnnotation()
