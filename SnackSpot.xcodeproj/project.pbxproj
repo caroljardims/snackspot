@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0AE625AF55036986F20C3760 /* Pods_SnackSpotTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F24105B8710AF84B0B743615 /* Pods_SnackSpotTests.framework */; };
+		698351DD1274C0BE381C9809 /* Pods_SnackSpotUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28B7F53D1E227C5375AD1783 /* Pods_SnackSpotUITests.framework */; };
+		7B951ACEE7A8D6DE201D6BAB /* Pods_SnackSpot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C94E9AEB4824D3A31846556E /* Pods_SnackSpot.framework */; };
 		CF5C0D601D89C6B3007BC1A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5C0D5F1D89C6B3007BC1A2 /* AppDelegate.swift */; };
 		CF5C0D621D89C6B3007BC1A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5C0D611D89C6B3007BC1A2 /* ViewController.swift */; };
 		CF5C0D651D89C6B3007BC1A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF5C0D631D89C6B3007BC1A2 /* Main.storyboard */; };
@@ -25,12 +28,17 @@
 		CF7A89EB1DF7460900C82BAA /* AddPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7A89EA1DF7460900C82BAA /* AddPlaceViewController.swift */; };
 		CF7A89F01DF7531B00C82BAA /* pinUnchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = CF7A89EE1DF7531B00C82BAA /* pinUnchecked.png */; };
 		CF7A89F11DF7531B00C82BAA /* pinChecked.png in Resources */ = {isa = PBXBuildFile; fileRef = CF7A89EF1DF7531B00C82BAA /* pinChecked.png */; };
-		CF7A89F31DF7584C00C82BAA /* cade.png in Resources */ = {isa = PBXBuildFile; fileRef = CF7A89F21DF7584C00C82BAA /* cade.png */; };
 		CF7CAD2B1DF0976A000537BA /* foodtruck.png in Resources */ = {isa = PBXBuildFile; fileRef = CF7CAD2A1DF0976A000537BA /* foodtruck.png */; };
+		CF8199741DF83B5100134D43 /* adicionar.png in Resources */ = {isa = PBXBuildFile; fileRef = CF8199721DF83B5100134D43 /* adicionar.png */; };
+		CF8199751DF83B5100134D43 /* cade.png in Resources */ = {isa = PBXBuildFile; fileRef = CF8199731DF83B5100134D43 /* cade.png */; };
+		CF8199771DF8496B00134D43 /* mfym4szjmcy-zach-savinar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CF8199761DF8496B00134D43 /* mfym4szjmcy-zach-savinar.jpg */; };
+		CF8199791DF84A0800134D43 /* lightsnackspot.png in Resources */ = {isa = PBXBuildFile; fileRef = CF8199781DF84A0800134D43 /* lightsnackspot.png */; };
+		CF81997B1DF85A6900134D43 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF81997A1DF85A6900134D43 /* LoginViewController.swift */; };
 		CF8481021DF1E53200586412 /* checkinbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = CF8481011DF1E53200586412 /* checkinbutton.png */; };
 		CF8481041DF1E66300586412 /* addhere.png in Resources */ = {isa = PBXBuildFile; fileRef = CF8481031DF1E66300586412 /* addhere.png */; };
 		CF8481061DF2137700586412 /* addbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = CF8481051DF2137700586412 /* addbutton.png */; };
 		CF8481081DF2142900586412 /* cancelbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = CF8481071DF2142900586412 /* cancelbutton.png */; };
+		CF8FFEE91DFB5348004C41CF /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8FFEE81DFB5348004C41CF /* UserProfileViewController.swift */; };
 		CF9D206F1DF5E7B700EA4B65 /* byu8ituwmfc-israel-sundseth.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CF9D206E1DF5E7B700EA4B65 /* byu8ituwmfc-israel-sundseth.jpg */; };
 		CF9D20711DF5EA1200EA4B65 /* nkrvmvjw3re-rafael-fabricio.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CF9D20701DF5EA1200EA4B65 /* nkrvmvjw3re-rafael-fabricio.jpg */; };
 		CF9D20731DF5EDB200EA4B65 /* draw-chakboard.png in Resources */ = {isa = PBXBuildFile; fileRef = CF9D20721DF5EDB200EA4B65 /* draw-chakboard.png */; };
@@ -54,6 +62,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		28B7F53D1E227C5375AD1783 /* Pods_SnackSpotUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnackSpotUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A579348FB794767228603D0 /* Pods-SnackSpot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnackSpot.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SnackSpot/Pods-SnackSpot.debug.xcconfig"; sourceTree = "<group>"; };
+		69C16F6C0BCBC0EFFBAADEC9 /* Pods-SnackSpotTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnackSpotTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SnackSpotTests/Pods-SnackSpotTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7D86488C0B6C666642185C66 /* Pods-SnackSpot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnackSpot.release.xcconfig"; path = "Pods/Target Support Files/Pods-SnackSpot/Pods-SnackSpot.release.xcconfig"; sourceTree = "<group>"; };
+		B3424960B246A2E50C47A6FF /* Pods-SnackSpotUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnackSpotUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SnackSpotUITests/Pods-SnackSpotUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C94E9AEB4824D3A31846556E /* Pods_SnackSpot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnackSpot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDEA175BD833EFA099FE90EC /* Pods-SnackSpotUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnackSpotUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SnackSpotUITests/Pods-SnackSpotUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CF5C0D5C1D89C6B3007BC1A2 /* SnackSpot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnackSpot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF5C0D5F1D89C6B3007BC1A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF5C0D611D89C6B3007BC1A2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -78,15 +93,23 @@
 		CF7A89EA1DF7460900C82BAA /* AddPlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPlaceViewController.swift; sourceTree = "<group>"; };
 		CF7A89EE1DF7531B00C82BAA /* pinUnchecked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pinUnchecked.png; sourceTree = "<group>"; };
 		CF7A89EF1DF7531B00C82BAA /* pinChecked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pinChecked.png; sourceTree = "<group>"; };
-		CF7A89F21DF7584C00C82BAA /* cade.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cade.png; sourceTree = "<group>"; };
 		CF7CAD2A1DF0976A000537BA /* foodtruck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = foodtruck.png; sourceTree = "<group>"; };
+		CF8199721DF83B5100134D43 /* adicionar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = adicionar.png; sourceTree = "<group>"; };
+		CF8199731DF83B5100134D43 /* cade.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cade.png; sourceTree = "<group>"; };
+		CF8199761DF8496B00134D43 /* mfym4szjmcy-zach-savinar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "mfym4szjmcy-zach-savinar.jpg"; sourceTree = "<group>"; };
+		CF8199781DF84A0800134D43 /* lightsnackspot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lightsnackspot.png; sourceTree = "<group>"; };
+		CF81997A1DF85A6900134D43 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		CF81997C1DF85E2D00134D43 /* SnackSpot.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SnackSpot.entitlements; sourceTree = "<group>"; };
 		CF8481011DF1E53200586412 /* checkinbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkinbutton.png; sourceTree = "<group>"; };
 		CF8481031DF1E66300586412 /* addhere.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addhere.png; sourceTree = "<group>"; };
 		CF8481051DF2137700586412 /* addbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addbutton.png; sourceTree = "<group>"; };
 		CF8481071DF2142900586412 /* cancelbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancelbutton.png; sourceTree = "<group>"; };
+		CF8FFEE81DFB5348004C41CF /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		CF9D206E1DF5E7B700EA4B65 /* byu8ituwmfc-israel-sundseth.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "byu8ituwmfc-israel-sundseth.jpg"; sourceTree = "<group>"; };
 		CF9D20701DF5EA1200EA4B65 /* nkrvmvjw3re-rafael-fabricio.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "nkrvmvjw3re-rafael-fabricio.jpg"; sourceTree = "<group>"; };
 		CF9D20721DF5EDB200EA4B65 /* draw-chakboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "draw-chakboard.png"; sourceTree = "<group>"; };
+		F24105B8710AF84B0B743615 /* Pods_SnackSpotTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnackSpotTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F39F4D6D8A4AC55989D5BACE /* Pods-SnackSpotTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnackSpotTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SnackSpotTests/Pods-SnackSpotTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B951ACEE7A8D6DE201D6BAB /* Pods_SnackSpot.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AE625AF55036986F20C3760 /* Pods_SnackSpotTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,19 +133,46 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				698351DD1274C0BE381C9809 /* Pods_SnackSpotUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		68BD392185AA1C86478F3151 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C94E9AEB4824D3A31846556E /* Pods_SnackSpot.framework */,
+				F24105B8710AF84B0B743615 /* Pods_SnackSpotTests.framework */,
+				28B7F53D1E227C5375AD1783 /* Pods_SnackSpotUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9449F7C847A7ACCDC23F736D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2A579348FB794767228603D0 /* Pods-SnackSpot.debug.xcconfig */,
+				7D86488C0B6C666642185C66 /* Pods-SnackSpot.release.xcconfig */,
+				69C16F6C0BCBC0EFFBAADEC9 /* Pods-SnackSpotTests.debug.xcconfig */,
+				F39F4D6D8A4AC55989D5BACE /* Pods-SnackSpotTests.release.xcconfig */,
+				CDEA175BD833EFA099FE90EC /* Pods-SnackSpotUITests.debug.xcconfig */,
+				B3424960B246A2E50C47A6FF /* Pods-SnackSpotUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		CF5C0D531D89C6B2007BC1A2 = {
 			isa = PBXGroup;
 			children = (
+				CF81997C1DF85E2D00134D43 /* SnackSpot.entitlements */,
 				CF5C0D5E1D89C6B3007BC1A2 /* SnackSpot01 */,
 				CF5C0D731D89C6B3007BC1A2 /* SnackSpot01Tests */,
 				CF5C0D7E1D89C6B3007BC1A2 /* SnackSpot01UITests */,
 				CF5C0D5D1D89C6B3007BC1A2 /* Products */,
+				9449F7C847A7ACCDC23F736D /* Pods */,
+				68BD392185AA1C86478F3151 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -146,6 +198,8 @@
 				CF5C0D681D89C6B3007BC1A2 /* LaunchScreen.storyboard */,
 				CF5C0D6B1D89C6B3007BC1A2 /* Info.plist */,
 				CF5F75071DD644F800F7B519 /* InfoViewController.swift */,
+				CF81997A1DF85A6900134D43 /* LoginViewController.swift */,
+				CF8FFEE81DFB5348004C41CF /* UserProfileViewController.swift */,
 			);
 			path = SnackSpot01;
 			sourceTree = "<group>";
@@ -171,15 +225,18 @@
 		CF5F75091DD6478D00F7B519 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				CF8199781DF84A0800134D43 /* lightsnackspot.png */,
 				CF9D20721DF5EDB200EA4B65 /* draw-chakboard.png */,
 				CF9D20701DF5EA1200EA4B65 /* nkrvmvjw3re-rafael-fabricio.jpg */,
 				CF9D206E1DF5E7B700EA4B65 /* byu8ituwmfc-israel-sundseth.jpg */,
 				CF7CAD2A1DF0976A000537BA /* foodtruck.png */,
+				CF8199761DF8496B00134D43 /* mfym4szjmcy-zach-savinar.jpg */,
 				CF8481031DF1E66300586412 /* addhere.png */,
 				CF8481011DF1E53200586412 /* checkinbutton.png */,
 				CF8481051DF2137700586412 /* addbutton.png */,
-				CF7A89F21DF7584C00C82BAA /* cade.png */,
 				CF7A89EE1DF7531B00C82BAA /* pinUnchecked.png */,
+				CF8199721DF83B5100134D43 /* adicionar.png */,
+				CF8199731DF83B5100134D43 /* cade.png */,
 				CF7A89EF1DF7531B00C82BAA /* pinChecked.png */,
 				CF8481071DF2142900586412 /* cancelbutton.png */,
 				CF5F75221DD66CFE00F7B519 /* marcaSS1.png */,
@@ -200,9 +257,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CF5C0D841D89C6B3007BC1A2 /* Build configuration list for PBXNativeTarget "SnackSpot" */;
 			buildPhases = (
+				575DB3D95BEB2ACAFCA04520 /* [CP] Check Pods Manifest.lock */,
 				CF5C0D581D89C6B2007BC1A2 /* Sources */,
 				CF5C0D591D89C6B2007BC1A2 /* Frameworks */,
 				CF5C0D5A1D89C6B3007BC1A2 /* Resources */,
+				B56A0660E167E41F212B6E5E /* [CP] Embed Pods Frameworks */,
+				3E7D0FC3840D426453820490 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -217,9 +277,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CF5C0D871D89C6B3007BC1A2 /* Build configuration list for PBXNativeTarget "SnackSpotTests" */;
 			buildPhases = (
+				E5E45037BCD35EEEC02E0802 /* [CP] Check Pods Manifest.lock */,
 				CF5C0D6C1D89C6B3007BC1A2 /* Sources */,
 				CF5C0D6D1D89C6B3007BC1A2 /* Frameworks */,
 				CF5C0D6E1D89C6B3007BC1A2 /* Resources */,
+				5A85BEAB301957081D9A33F7 /* [CP] Embed Pods Frameworks */,
+				7E75394EC8D7700F3306BD3A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -235,9 +298,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CF5C0D8A1D89C6B3007BC1A2 /* Build configuration list for PBXNativeTarget "SnackSpotUITests" */;
 			buildPhases = (
+				0929C4A666A9B84B79B202E2 /* [CP] Check Pods Manifest.lock */,
 				CF5C0D771D89C6B3007BC1A2 /* Sources */,
 				CF5C0D781D89C6B3007BC1A2 /* Frameworks */,
 				CF5C0D791D89C6B3007BC1A2 /* Resources */,
+				C8E512343E9D09B03B62DD89 /* [CP] Embed Pods Frameworks */,
+				0FA4C2208AAEF0DC375804A6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -261,7 +327,13 @@
 				TargetAttributes = {
 					CF5C0D5B1D89C6B3007BC1A2 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = JAHZ753UZ7;
 						LastSwiftMigration = 0800;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					CF5C0D6F1D89C6B3007BC1A2 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -303,21 +375,24 @@
 				CF5C0D6A1D89C6B3007BC1A2 /* LaunchScreen.storyboard in Resources */,
 				CF7A89F01DF7531B00C82BAA /* pinUnchecked.png in Resources */,
 				CF5F751D1DD6549600F7B519 /* background.png in Resources */,
+				CF8199791DF84A0800134D43 /* lightsnackspot.png in Resources */,
 				CF9D20731DF5EDB200EA4B65 /* draw-chakboard.png in Resources */,
 				CF5F751F1DD6661100F7B519 /* nome.png in Resources */,
+				CF8199741DF83B5100134D43 /* adicionar.png in Resources */,
 				CF9D20711DF5EA1200EA4B65 /* nkrvmvjw3re-rafael-fabricio.jpg in Resources */,
 				CF8481041DF1E66300586412 /* addhere.png in Resources */,
 				CF5F750B1DD6479800F7B519 /* foodtruck.jpg in Resources */,
 				CF8481081DF2142900586412 /* cancelbutton.png in Resources */,
 				CF8481061DF2137700586412 /* addbutton.png in Resources */,
 				CF5F75131DD64D9A00F7B519 /* backbutton.png in Resources */,
+				CF8199771DF8496B00134D43 /* mfym4szjmcy-zach-savinar.jpg in Resources */,
+				CF8199751DF83B5100134D43 /* cade.png in Resources */,
 				CF5F750F1DD6497C00F7B519 /* icons-04.png in Resources */,
 				CF9D206F1DF5E7B700EA4B65 /* byu8ituwmfc-israel-sundseth.jpg in Resources */,
 				CF5C0D671D89C6B3007BC1A2 /* Assets.xcassets in Resources */,
 				CF5C0D651D89C6B3007BC1A2 /* Main.storyboard in Resources */,
 				CF7CAD2B1DF0976A000537BA /* foodtruck.png in Resources */,
 				CF8481021DF1E53200586412 /* checkinbutton.png in Resources */,
-				CF7A89F31DF7584C00C82BAA /* cade.png in Resources */,
 				CF5F75231DD66CFE00F7B519 /* marcaSS1.png in Resources */,
 				CF5F750E1DD6497C00F7B519 /* icons-04-2.png in Resources */,
 				CF7A89F11DF7531B00C82BAA /* pinChecked.png in Resources */,
@@ -340,14 +415,154 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0929C4A666A9B84B79B202E2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		0FA4C2208AAEF0DC375804A6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SnackSpotUITests/Pods-SnackSpotUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3E7D0FC3840D426453820490 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SnackSpot/Pods-SnackSpot-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		575DB3D95BEB2ACAFCA04520 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5A85BEAB301957081D9A33F7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SnackSpotTests/Pods-SnackSpotTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7E75394EC8D7700F3306BD3A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SnackSpotTests/Pods-SnackSpotTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B56A0660E167E41F212B6E5E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SnackSpot/Pods-SnackSpot-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C8E512343E9D09B03B62DD89 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SnackSpotUITests/Pods-SnackSpotUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E5E45037BCD35EEEC02E0802 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CF5C0D581D89C6B2007BC1A2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				CF7A89EB1DF7460900C82BAA /* AddPlaceViewController.swift in Sources */,
+				CF8FFEE91DFB5348004C41CF /* UserProfileViewController.swift in Sources */,
 				CF5C0D621D89C6B3007BC1A2 /* ViewController.swift in Sources */,
 				CF5F75081DD644F800F7B519 /* InfoViewController.swift in Sources */,
+				CF81997B1DF85A6900134D43 /* LoginViewController.swift in Sources */,
 				CF5C0D601D89C6B3007BC1A2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -495,8 +710,11 @@
 		};
 		CF5C0D851D89C6B3007BC1A2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A579348FB794767228603D0 /* Pods-SnackSpot.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SnackSpot.entitlements;
+				DEVELOPMENT_TEAM = JAHZ753UZ7;
 				INFOPLIST_FILE = SnackSpot01/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = testes.SnackSpot01;
@@ -507,8 +725,11 @@
 		};
 		CF5C0D861D89C6B3007BC1A2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D86488C0B6C666642185C66 /* Pods-SnackSpot.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SnackSpot.entitlements;
+				DEVELOPMENT_TEAM = JAHZ753UZ7;
 				INFOPLIST_FILE = SnackSpot01/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = testes.SnackSpot01;
@@ -519,6 +740,7 @@
 		};
 		CF5C0D881D89C6B3007BC1A2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69C16F6C0BCBC0EFFBAADEC9 /* Pods-SnackSpotTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = SnackSpot01Tests/Info.plist;
@@ -532,6 +754,7 @@
 		};
 		CF5C0D891D89C6B3007BC1A2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F39F4D6D8A4AC55989D5BACE /* Pods-SnackSpotTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = SnackSpot01Tests/Info.plist;
@@ -545,6 +768,7 @@
 		};
 		CF5C0D8B1D89C6B3007BC1A2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDEA175BD833EFA099FE90EC /* Pods-SnackSpotUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = SnackSpot01UITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -557,6 +781,7 @@
 		};
 		CF5C0D8C1D89C6B3007BC1A2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3424960B246A2E50C47A6FF /* Pods-SnackSpotUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = SnackSpot01UITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

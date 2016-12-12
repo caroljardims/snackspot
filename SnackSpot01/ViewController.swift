@@ -15,6 +15,8 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     
     @IBOutlet weak var Map: MKMapView!
+    @IBOutlet weak var profilePicture: UIImageView!
+    @IBOutlet weak var labelname: UIButton!
     
     
     let locationManager = CLLocationManager()
@@ -23,33 +25,43 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     var userLocation:CLLocationCoordinate2D? = nil
     var newLocation:String = ""
     var checkin:String = ""
+    var userFBInfo:[String:AnyObject] = [:]
+    var arrayFBInfo:[String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let locationsDefault = UserDefaults.standard
+        
+        let infosDefault = UserDefaults.standard
         
         
-        if locationsDefault.value(forKey: "myLocations") != nil {
-            // print("HERE I AM MOTHERFUCKER")
-            var myLocations = locationsDefault.value(forKey: "myLocations") as! [String]
+        if infosDefault.value(forKey: "myLocations") != nil {
+            print("HERE I AM MOTHERFUCKER")
+            var myLocations = infosDefault.value(forKey: "myLocations") as! [String]
             if newLocation != "" { myLocations.append(newLocation) }
-            locationsDefault.set(myLocations, forKey: "myLocations")
-            locationsDefault.synchronize()
-            let array = locationsDefault.object(forKey: "myLocations") as! [String]
+            infosDefault.set(myLocations, forKey: "myLocations")
+            infosDefault.synchronize()
+            let array = infosDefault.object(forKey: "myLocations") as! [String]
             for x in array {
                 let new = x.components(separatedBy: ";;")
                 self.placesData.append(new)
-                // for i in new { print(i) }
             }
         } else {
             if newLocation != "" {
-                locationsDefault.set([newLocation], forKey: "myLocations")
-                locationsDefault.synchronize()
+                infosDefault.set([newLocation], forKey: "myLocations")
+                infosDefault.synchronize()
             }
         }
         
-        
+        if !checkin.isEmpty {
+            if infosDefault.value(forKey: "userCheckin") != nil {
+                var userCheckin = infosDefault.value(forKey: "userCheckin") as! [String]
+                userCheckin.append(self.checkin)
+                infosDefault.set(userCheckin, forKey: "userCheckin")
+            } else {
+                infosDefault.set([self.checkin], forKey: "userCheckin")
+                infosDefault.synchronize()
+            }
+        }
         
         let requestURL: NSURL = NSURL(string: "https://raw.githubusercontent.com/caroljardims/snackspot/master/localinfos.js")!
         let urlRequest: NSMutableURLRequest = NSMutableURLRequest(url: requestURL as URL)
@@ -98,10 +110,13 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
                 
             } else { print(" Deu Merda!") }
             
+            infosDefault.set(self.placesData, forKey: "AllLocations")
+            infosDefault.synchronize()
+            
             for d in self.placesData {
-                print(d)
+//                print(d)
                 let annotation = MKPointAnnotation()
-                print(">>>>>" + self.checkin)
+//                print(">>>>>" + self.checkin)
                 if self.checkin != "" {
                     let aux = self.checkin.components(separatedBy: ";;")
                     if aux[0] == d[3] && aux[1] == d[4]{
@@ -130,25 +145,54 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         // Map.addAnnotation(myActualSpot)
         
         
+        if infosDefault.value(forKey: "userLogged") != nil {
+            
+            var userInfos = infosDefault.value(forKey: "userLogged") as! [String]
+            self.labelname.setTitle(userInfos[0], for: .normal)
+            
+//            print(userInfos)
+            if let url = NSURL(string: userInfos[1]) {
+                if let data = NSData(contentsOf: url as URL){
+                    profilePicture.image = UIImage(data: data as Data)
+                }
+            }
+            
+        } else {
+         
+            if let username = userFBInfo["first_name"] {
+                arrayFBInfo.append((username as! String))
+                self.labelname.setTitle((username as? String), for: .normal)
+
+            }
+//            if let email = userFBInfo["email"]{
+//                arrayFBInfo.append((email as! String))
+//            }
+            if let picData = userFBInfo["picture"]  {
+                let pic = picData["data"] as! [String : AnyObject]
+                arrayFBInfo.append((pic["url"] as! String))
+                if let url = NSURL(string: pic["url"] as! String) {
+                    if let data = NSData(contentsOf: url as URL){
+                        profilePicture.image = UIImage(data: data as Data)
+                    }
+                }
+            }
+            
+            infosDefault.set(arrayFBInfo, forKey: "userLogged")
+            infosDefault.synchronize()
+        }
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
-        //se l'annotation è la posizione dell'Utente allora esci dalla funzione e mostra il punto blu
         if annotation is MKUserLocation {
             return nil
         }
-        
-        //creo un id da associare ad ogni annotationView
+
         let reuseId = "ponto"
-        //se esistono troppi punti nella mappa, prende quello non visto e lo riutilizza nella porzione di mappa vista
         var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId)
         
-        //se non è stata ancora creata un'AnnotationView la crea
         if pinView == nil {
-            //creo un pin di tipo MKAnnotationView che rappresenta l'oggetto reale da inserire in mappa
             pinView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
-            //cambio l'immagine standard del point annotation con una creata da me
             pinView!.image = UIImage(named: "pinUnchecked")
             
             if self.checkin != "" {
@@ -161,17 +205,15 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             } else {
                 pinView!.image = UIImage(named: "pinUnchecked")
             }
-            
-            //sblocco la possibilità di cliccarlo per vedere i dettagli
+
             pinView!.canShowCallout = true
             let calloutButton = UIButton(type: .detailDisclosure)
             pinView!.rightCalloutAccessoryView = calloutButton
         }
         else {
-            //se esiste lo modifico con il nuovo point richiesto
             pinView!.annotation = annotation
         }
-        //restituisce un pointAnnotation nuovo o modificato
+
         return pinView
     }
 
