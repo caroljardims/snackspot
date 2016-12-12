@@ -20,25 +20,66 @@ class InfoViewController: UIViewController {
     @IBOutlet weak var star3: UIImageView!
     @IBOutlet weak var star4: UIImageView!
     @IBOutlet weak var star5: UIImageView!
+    @IBOutlet weak var flag: UISwitch!
+    @IBOutlet weak var checkinButton: UIBarButtonItem!
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        print(infos)
+//        print(infos)
         name.text = infos[1]
         servimos.text = infos[5]
         aval = Int(infos[6])!
-        print(aval)
+//        print(aval)
         
         self.starRate()
+        if infos[0] == "0" {
+            flag.setOn(false, animated: true)
+        }
+        openPlace()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func toggle(_ sender: AnyObject) {
+        openPlace()
     }
+    
+    func openPlace(){
+        
+        if self.flag.isOn {
+            infos[0] = "1"
+            self.checkinButton.isEnabled = true
+        } else {
+            infos[0] = "0"
+            self.checkinButton.isEnabled = false
+        }
+        
+        let infosDefault = UserDefaults.standard
+        
+        if infosDefault.value(forKey: "allLocations") != nil {
+            var  locations = infosDefault.value(forKey: "allLocations") as! [[String]]
+            var f = false
+            var i = 0
+            for l in locations {
+                if infos[3] == l[3] && infos[4] == l[4]{
+                    f = true
+                    break
+                }
+                i += 1
+            }
+            
+            if f { locations[i] = infos }
+//            print(locations)
+            
+            infosDefault.set(locations, forKey: "allLocations")
+            infosDefault.synchronize()
+        }
+    
+    }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "CheckIn" {
@@ -81,7 +122,7 @@ class InfoViewController: UIViewController {
     }
     
     @IBAction func checkInButton(_ sender: AnyObject) {
-    
+        
         performSegue(withIdentifier: "CheckIn", sender: self)
     
     }

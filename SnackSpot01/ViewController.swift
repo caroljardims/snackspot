@@ -63,60 +63,14 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             }
         }
         
-        let requestURL: NSURL = NSURL(string: "https://raw.githubusercontent.com/caroljardims/snackspot/master/localinfos.js")!
-        let urlRequest: NSMutableURLRequest = NSMutableURLRequest(url: requestURL as URL)
-        let session = URLSession.shared
-        let task = session.dataTask(with: urlRequest as URLRequest) {
-            (data, response, error) -> Void in
+        if infosDefault.value(forKey: "allLocations") != nil{
             
-            let httpResponse = response as! HTTPURLResponse
-            let statusCode = httpResponse.statusCode
-            
-            if (statusCode == 200) {
-                print("Everyone is fine, file downloaded successfully.")
-                
-                do{
-                    let json = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! [String: AnyObject]
-                    if let places = json["places"] as? [[String : AnyObject]] {
-                        for place in places {
-                            if let id = place["id"] as? String {
-                                if let title = place["title"] as? String {
-                                    if let subtitle = place["subtitle"] as? String {
-                                        if let lati = place["latitude"] as? String {
-                                            if let long = place["longitude"] as? String {
-                                                if let cardapio = place["cardapio"] as? String{
-                                                    if let aval = place["aval"] as? String {
-                                                        var data:[String] = []
-                                                        data.append(id)
-                                                        data.append(title)
-                                                        data.append(subtitle)
-                                                        data.append(lati)
-                                                        data.append(long)
-                                                        data.append(cardapio)
-                                                        data.append(aval)
-                                                        self.placesData.append(data)
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                } catch {
-                    print("Error with Json: \(error)")
-                }
-                
-            } else { print(" Deu Merda!") }
-            
-            infosDefault.set(self.placesData, forKey: "AllLocations")
-            infosDefault.synchronize()
+            self.placesData = infosDefault.value(forKey: "allLocations") as! [[String]]
             
             for d in self.placesData {
-//                print(d)
+                //                print(d)
                 let annotation = MKPointAnnotation()
-//                print(">>>>>" + self.checkin)
+                //                print(">>>>>" + self.checkin)
                 if self.checkin != "" {
                     let aux = self.checkin.components(separatedBy: ";;")
                     if aux[0] == d[3] && aux[1] == d[4]{
@@ -131,9 +85,83 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
                 annotation.coordinate = CLLocationCoordinate2D(latitude:Double(d[3])!,longitude:Double(d[4])!)
                 self.Map.addAnnotation(annotation)
             }
-        }
+            infosDefault.set(self.placesData, forKey: "allLocations")
+            infosDefault.synchronize()
         
-        task.resume()
+        } else {
+    
+            let requestURL: NSURL = NSURL(string: "https://raw.githubusercontent.com/caroljardims/snackspot/master/localinfos.js")!
+            let urlRequest: NSMutableURLRequest = NSMutableURLRequest(url: requestURL as URL)
+            let session = URLSession.shared
+            let task = session.dataTask(with: urlRequest as URLRequest) {
+                (data, response, error) -> Void in
+                
+                let httpResponse = response as! HTTPURLResponse
+                let statusCode = httpResponse.statusCode
+                
+                if (statusCode == 200) {
+                    print("Everyone is fine, file downloaded successfully.")
+                    
+                    do{
+                        let json = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! [String: AnyObject]
+                        if let places = json["places"] as? [[String : AnyObject]] {
+                            for place in places {
+                                if let id = place["open"] as? String {
+                                    if let title = place["title"] as? String {
+                                        if let subtitle = place["subtitle"] as? String {
+                                            if let lati = place["latitude"] as? String {
+                                                if let long = place["longitude"] as? String {
+                                                    if let cardapio = place["cardapio"] as? String{
+                                                        if let aval = place["aval"] as? String {
+                                                            var data:[String] = []
+                                                            data.append(id)
+                                                            data.append(title)
+                                                            data.append(subtitle)
+                                                            data.append(lati)
+                                                            data.append(long)
+                                                            data.append(cardapio)
+                                                            data.append(aval)
+                                                            self.placesData.append(data)
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    } catch {
+                        print("Error with Json: \(error)")
+                    }
+                    
+                } else { print(" Deu Merda!") }
+                
+                infosDefault.set(self.placesData, forKey: "allLocations")
+                infosDefault.synchronize()
+                
+                for d in self.placesData {
+    //                print(d)
+                    let annotation = MKPointAnnotation()
+    //                print(">>>>>" + self.checkin)
+                    if self.checkin != "" {
+                        let aux = self.checkin.components(separatedBy: ";;")
+                        if aux[0] == d[3] && aux[1] == d[4]{
+                            annotation.subtitle = "Você está aqui!"
+                        } else {
+                            annotation.subtitle = d[2]
+                        }
+                    } else {
+                        annotation.subtitle = d[2]
+                    }
+                    annotation.title = d[1]
+                    annotation.coordinate = CLLocationCoordinate2D(latitude:Double(d[3])!,longitude:Double(d[4])!)
+                    self.Map.addAnnotation(annotation)
+                }
+            }
+            
+            task.resume()
+        }
         
         self.locationManager.delegate = self
         self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
@@ -192,20 +220,29 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId)
         
         if pinView == nil {
+            
             pinView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
-            pinView!.image = UIImage(named: "pinUnchecked")
+            pinView!.image = UIImage(named: "pinOpen")
             
             if self.checkin != "" {
                 let aux = self.checkin.components(separatedBy: ";;")
                 if aux[0] == String(format: "%f", annotation.coordinate.latitude) && aux[1] == String(format: "%f", annotation.coordinate.longitude){
                     pinView?.image = UIImage(named: "pinChecked")
                 } else {
-                    pinView!.image = UIImage(named: "pinUnchecked")
+                    pinView!.image = UIImage(named: "pinOpen")
                 }
             } else {
-                pinView!.image = UIImage(named: "pinUnchecked")
+                pinView!.image = UIImage(named: "pinOpen")
             }
-
+            
+            for p in self.placesData {
+                if p[0] == "0" {
+                    if p[3] == String(format: "%f", annotation.coordinate.latitude) && p[4] == String(format: "%f", annotation.coordinate.longitude){
+                        pinView?.image = UIImage(named: "pinClosed")
+                    }
+                }
+            }
+            
             pinView!.canShowCallout = true
             let calloutButton = UIButton(type: .detailDisclosure)
             pinView!.rightCalloutAccessoryView = calloutButton
@@ -225,7 +262,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         
         if control == view.rightCalloutAccessoryView {
-            print("SHOW TOP SEXTOU")
+//            print("SHOW TOP SEXTOU")
             for d in placesData{
                 if view.annotation?.coordinate.latitude == Double(d[3]) && view.annotation?.coordinate.longitude == Double(d[4]) {
                     parameters = d

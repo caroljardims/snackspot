@@ -31,9 +31,9 @@ class UserProfileViewController: UIViewController {
             }
         }
         
-        if infosDefault.value(forKey: "userCheckin") != nil &&  infosDefault.value(forKey: "AllLocations") != nil {
+        if infosDefault.value(forKey: "userCheckin") != nil &&  infosDefault.value(forKey: "allLocations") != nil {
             var userCheckin = infosDefault.value(forKey: "userCheckin") as! [String]
-            let allLocations = infosDefault.value(forKey: "AllLocations") as! [[String]]
+            let allLocations = infosDefault.value(forKey: "allLocations") as! [[String]]
             var text = ""
             userCheckin = userCheckin.reversed()
             for c in userCheckin {
@@ -45,7 +45,6 @@ class UserProfileViewController: UIViewController {
                 }
             }
             self.places.text = text
-
         }
     }
 
