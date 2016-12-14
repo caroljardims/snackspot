@@ -24,8 +24,9 @@ class InfoViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBOutlet weak var checkinButton: UIBarButtonItem!
     @IBOutlet weak var openLabel: UILabel!
     @IBOutlet weak var placeImage: UIImageView!
-    
-    
+    @IBOutlet weak var commentBox: UILabel!
+    @IBOutlet weak var commentTextField: UITextField!
+    var username = "user"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,7 @@ class InfoViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         // Do any additional setup after loading the view.
         print(infos)
         name.text = infos[1]
+        commentTextField.addTarget(nil, action:Selector(("firstResponderAction:")), for:.editingDidEndOnExit)
         servimos.text = infos[5].replacingOccurrences(of: ",", with: "\n")
         aval = Int(infos[6])!
 //        print(aval)
@@ -46,7 +48,16 @@ class InfoViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         }
         openPlace()
         
-        
+        let infosDefault = UserDefaults.standard
+        if infosDefault.value(forKey: infos[1]) != nil {
+            let allComments = infosDefault.value(forKey: infos[1]) as! [String]
+            let aux = allComments.reversed()
+            var x = ""
+            for a in aux {
+                x = x + a + "\n"
+            }
+            self.commentBox.text = x
+        }
     }
     
     @IBAction func toggle(_ sender: AnyObject) {
@@ -113,6 +124,35 @@ class InfoViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         } else {
             print("Something wronge.")
         }
+    }
+    
+    @IBAction func addComment(_ sender: AnyObject) {
+        
+        let infosDefault = UserDefaults.standard
+        
+        if self.commentTextField.text != "" {
+            let save = username + ": " + self.commentTextField.text!
+            if infosDefault.value(forKey: infos[1]) != nil {
+                var allComments = infosDefault.value(forKey: infos[1]) as! [String]
+                allComments.append(save)
+                let aux = allComments.reversed()
+                var x = ""
+                for a in aux {
+                    x = x + a + "\n"
+                }
+                self.commentBox.text = x
+                infosDefault.set(allComments, forKey: infos[1])
+                infosDefault.synchronize()
+            } else {
+                self.commentBox.text = save
+                infosDefault.set([self.commentTextField.text!], forKey: infos[1])
+                infosDefault.synchronize()
+            }
+        }
+        
+        self.commentTextField.text = ""
+        
+    
     }
     
     func openPlace(){

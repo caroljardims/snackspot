@@ -27,6 +27,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     var checkin:String = ""
     var userFBInfo:[String:AnyObject] = [:]
     var arrayFBInfo:[String] = []
+    var userName = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -179,6 +180,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             if let username = userFBInfo["first_name"] {
                 arrayFBInfo.append((username as! String))
                 self.labelname.setTitle((username as? String), for: .normal)
+                self.userName = username as! String
 
             }
 //            if let email = userFBInfo["email"]{
@@ -267,6 +269,9 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         if segue?.identifier == "Info" {
             let sendId = segue?.destination as! InfoViewController
             sendId.infos = self.parameters
+            if userName != "" { sendId.username = userName } else { sendId.username = "user" }
+            
+            
         }
         if segue?.identifier == "AddScreen" {
             self.locationManager.startUpdatingLocation()

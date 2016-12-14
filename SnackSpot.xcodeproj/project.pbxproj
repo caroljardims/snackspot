@@ -10,6 +10,8 @@
 		0AE625AF55036986F20C3760 /* Pods_SnackSpotTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F24105B8710AF84B0B743615 /* Pods_SnackSpotTests.framework */; };
 		698351DD1274C0BE381C9809 /* Pods_SnackSpotUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28B7F53D1E227C5375AD1783 /* Pods_SnackSpotUITests.framework */; };
 		7B951ACEE7A8D6DE201D6BAB /* Pods_SnackSpot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C94E9AEB4824D3A31846556E /* Pods_SnackSpot.framework */; };
+		CF100B831E01AA0200174524 /* addcomment.png in Resources */ = {isa = PBXBuildFile; fileRef = CF100B821E01AA0200174524 /* addcomment.png */; };
+		CF100B851E01B5B400174524 /* StockSnap_O0V6U9F7UH.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CF100B841E01B5B400174524 /* StockSnap_O0V6U9F7UH.jpg */; };
 		CF5C0D601D89C6B3007BC1A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5C0D5F1D89C6B3007BC1A2 /* AppDelegate.swift */; };
 		CF5C0D621D89C6B3007BC1A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5C0D611D89C6B3007BC1A2 /* ViewController.swift */; };
 		CF5C0D651D89C6B3007BC1A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF5C0D631D89C6B3007BC1A2 /* Main.storyboard */; };
@@ -75,6 +77,8 @@
 		B3424960B246A2E50C47A6FF /* Pods-SnackSpotUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnackSpotUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SnackSpotUITests/Pods-SnackSpotUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C94E9AEB4824D3A31846556E /* Pods_SnackSpot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnackSpot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDEA175BD833EFA099FE90EC /* Pods-SnackSpotUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnackSpotUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SnackSpotUITests/Pods-SnackSpotUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		CF100B821E01AA0200174524 /* addcomment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addcomment.png; sourceTree = "<group>"; };
+		CF100B841E01B5B400174524 /* StockSnap_O0V6U9F7UH.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = StockSnap_O0V6U9F7UH.jpg; sourceTree = "<group>"; };
 		CF5C0D5C1D89C6B3007BC1A2 /* SnackSpot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnackSpot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF5C0D5F1D89C6B3007BC1A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF5C0D611D89C6B3007BC1A2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -238,6 +242,8 @@
 		CF5F75091DD6478D00F7B519 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				CF100B841E01B5B400174524 /* StockSnap_O0V6U9F7UH.jpg */,
+				CF100B821E01AA0200174524 /* addcomment.png */,
 				CF9681551E0087AB004A6122 /* editbutton2.png */,
 				CF9681531E00831F004A6122 /* otz38_n1kea-cedric-brule.jpg */,
 				CF9681511E008121004A6122 /* editButton.png */,
@@ -397,6 +403,8 @@
 				CF9D20731DF5EDB200EA4B65 /* draw-chakboard.png in Resources */,
 				CF9681541E00831F004A6122 /* otz38_n1kea-cedric-brule.jpg in Resources */,
 				CF5F751F1DD6661100F7B519 /* nome.png in Resources */,
+				CF100B851E01B5B400174524 /* StockSnap_O0V6U9F7UH.jpg in Resources */,
+				CF100B831E01AA0200174524 /* addcomment.png in Resources */,
 				CF8620E41DFF439C0057A8A7 /* pinChecked.png in Resources */,
 				CF9681501E0061AA004A6122 /* camera.png in Resources */,
 				CF8199741DF83B5100134D43 /* adicionar.png in Resources */,
