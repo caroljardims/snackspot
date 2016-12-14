@@ -29,7 +29,10 @@ class AddPlaceViewController: UIViewController, MKMapViewDelegate, CLLocationMan
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.hideKeyboardWhenTappedAround()
+        name.addTarget(nil, action:Selector(("firstResponderAction:")), for:.editingDidEndOnExit)
+        type.addTarget(nil, action:Selector(("firstResponderAction:")), for:.editingDidEndOnExit)
+        menu.addTarget(nil, action:Selector(("firstResponderAction:")), for:.editingDidEndOnExit)
         // Do any additional setup after loading the view.
     }
 
@@ -40,7 +43,7 @@ class AddPlaceViewController: UIViewController, MKMapViewDelegate, CLLocationMan
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AddAnnotation" {
-            let str = array[0] + ";;" + array[1] + ";;" + array[2] + ";;" + array[3] + ";;" + array[4] + ";;" + array[5] + ";;" + array[6]
+            let str = array[0] + ";;" + array[1] + ";;" + array[2] + ";;" + array[3] + ";;" + array[4] + ";;" + array[5] + ";;" + array[6] + ";;default"
 
             let sendId = segue.destination as! ViewController
             sendId.newLocation = str

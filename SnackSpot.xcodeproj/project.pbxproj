@@ -40,6 +40,11 @@
 		CF8620E51DFF439C0057A8A7 /* pinClosed.png in Resources */ = {isa = PBXBuildFile; fileRef = CF8620E21DFF439C0057A8A7 /* pinClosed.png */; };
 		CF8620E61DFF439C0057A8A7 /* pinOpen.png in Resources */ = {isa = PBXBuildFile; fileRef = CF8620E31DFF439C0057A8A7 /* pinOpen.png */; };
 		CF8FFEE91DFB5348004C41CF /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8FFEE81DFB5348004C41CF /* UserProfileViewController.swift */; };
+		CF9681501E0061AA004A6122 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = CF96814F1E0061AA004A6122 /* camera.png */; };
+		CF9681521E008121004A6122 /* editButton.png in Resources */ = {isa = PBXBuildFile; fileRef = CF9681511E008121004A6122 /* editButton.png */; };
+		CF9681541E00831F004A6122 /* otz38_n1kea-cedric-brule.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CF9681531E00831F004A6122 /* otz38_n1kea-cedric-brule.jpg */; };
+		CF9681561E0087AB004A6122 /* editbutton2.png in Resources */ = {isa = PBXBuildFile; fileRef = CF9681551E0087AB004A6122 /* editbutton2.png */; };
+		CF9681581E008925004A6122 /* EditInfosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9681571E008925004A6122 /* EditInfosViewController.swift */; };
 		CF9D206F1DF5E7B700EA4B65 /* byu8ituwmfc-israel-sundseth.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CF9D206E1DF5E7B700EA4B65 /* byu8ituwmfc-israel-sundseth.jpg */; };
 		CF9D20711DF5EA1200EA4B65 /* nkrvmvjw3re-rafael-fabricio.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CF9D20701DF5EA1200EA4B65 /* nkrvmvjw3re-rafael-fabricio.jpg */; };
 		CF9D20731DF5EDB200EA4B65 /* draw-chakboard.png in Resources */ = {isa = PBXBuildFile; fileRef = CF9D20721DF5EDB200EA4B65 /* draw-chakboard.png */; };
@@ -107,6 +112,11 @@
 		CF8620E21DFF439C0057A8A7 /* pinClosed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pinClosed.png; sourceTree = "<group>"; };
 		CF8620E31DFF439C0057A8A7 /* pinOpen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pinOpen.png; sourceTree = "<group>"; };
 		CF8FFEE81DFB5348004C41CF /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
+		CF96814F1E0061AA004A6122 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
+		CF9681511E008121004A6122 /* editButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = editButton.png; sourceTree = "<group>"; };
+		CF9681531E00831F004A6122 /* otz38_n1kea-cedric-brule.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "otz38_n1kea-cedric-brule.jpg"; sourceTree = "<group>"; };
+		CF9681551E0087AB004A6122 /* editbutton2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = editbutton2.png; sourceTree = "<group>"; };
+		CF9681571E008925004A6122 /* EditInfosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditInfosViewController.swift; sourceTree = "<group>"; };
 		CF9D206E1DF5E7B700EA4B65 /* byu8ituwmfc-israel-sundseth.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "byu8ituwmfc-israel-sundseth.jpg"; sourceTree = "<group>"; };
 		CF9D20701DF5EA1200EA4B65 /* nkrvmvjw3re-rafael-fabricio.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "nkrvmvjw3re-rafael-fabricio.jpg"; sourceTree = "<group>"; };
 		CF9D20721DF5EDB200EA4B65 /* draw-chakboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "draw-chakboard.png"; sourceTree = "<group>"; };
@@ -202,6 +212,7 @@
 				CF5F75071DD644F800F7B519 /* InfoViewController.swift */,
 				CF81997A1DF85A6900134D43 /* LoginViewController.swift */,
 				CF8FFEE81DFB5348004C41CF /* UserProfileViewController.swift */,
+				CF9681571E008925004A6122 /* EditInfosViewController.swift */,
 			);
 			path = SnackSpot01;
 			sourceTree = "<group>";
@@ -227,6 +238,10 @@
 		CF5F75091DD6478D00F7B519 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				CF9681551E0087AB004A6122 /* editbutton2.png */,
+				CF9681531E00831F004A6122 /* otz38_n1kea-cedric-brule.jpg */,
+				CF9681511E008121004A6122 /* editButton.png */,
+				CF96814F1E0061AA004A6122 /* camera.png */,
 				CF8199781DF84A0800134D43 /* lightsnackspot.png */,
 				CF8620E11DFF439C0057A8A7 /* pinChecked.png */,
 				CF8620E21DFF439C0057A8A7 /* pinClosed.png */,
@@ -378,9 +393,12 @@
 				CF5C0D6A1D89C6B3007BC1A2 /* LaunchScreen.storyboard in Resources */,
 				CF5F751D1DD6549600F7B519 /* background.png in Resources */,
 				CF8199791DF84A0800134D43 /* lightsnackspot.png in Resources */,
+				CF9681561E0087AB004A6122 /* editbutton2.png in Resources */,
 				CF9D20731DF5EDB200EA4B65 /* draw-chakboard.png in Resources */,
+				CF9681541E00831F004A6122 /* otz38_n1kea-cedric-brule.jpg in Resources */,
 				CF5F751F1DD6661100F7B519 /* nome.png in Resources */,
 				CF8620E41DFF439C0057A8A7 /* pinChecked.png in Resources */,
+				CF9681501E0061AA004A6122 /* camera.png in Resources */,
 				CF8199741DF83B5100134D43 /* adicionar.png in Resources */,
 				CF9D20711DF5EA1200EA4B65 /* nkrvmvjw3re-rafael-fabricio.jpg in Resources */,
 				CF8481041DF1E66300586412 /* addhere.png in Resources */,
@@ -398,6 +416,7 @@
 				CF5C0D651D89C6B3007BC1A2 /* Main.storyboard in Resources */,
 				CF7CAD2B1DF0976A000537BA /* foodtruck.png in Resources */,
 				CF8481021DF1E53200586412 /* checkinbutton.png in Resources */,
+				CF9681521E008121004A6122 /* editButton.png in Resources */,
 				CF5F75231DD66CFE00F7B519 /* marcaSS1.png in Resources */,
 				CF5F750E1DD6497C00F7B519 /* icons-04-2.png in Resources */,
 			);
@@ -565,6 +584,7 @@
 				CF7A89EB1DF7460900C82BAA /* AddPlaceViewController.swift in Sources */,
 				CF8FFEE91DFB5348004C41CF /* UserProfileViewController.swift in Sources */,
 				CF5C0D621D89C6B3007BC1A2 /* ViewController.swift in Sources */,
+				CF9681581E008925004A6122 /* EditInfosViewController.swift in Sources */,
 				CF5F75081DD644F800F7B519 /* InfoViewController.swift in Sources */,
 				CF81997B1DF85A6900134D43 /* LoginViewController.swift in Sources */,
 				CF5C0D601D89C6B3007BC1A2 /* AppDelegate.swift in Sources */,

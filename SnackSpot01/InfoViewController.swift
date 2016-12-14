@@ -8,7 +8,7 @@
 
 import UIKit
 
-class InfoViewController: UIViewController {
+class InfoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     
     var infos:[String] = []
@@ -22,6 +22,8 @@ class InfoViewController: UIViewController {
     @IBOutlet weak var star5: UIImageView!
     @IBOutlet weak var flag: UISwitch!
     @IBOutlet weak var checkinButton: UIBarButtonItem!
+    @IBOutlet weak var openLabel: UILabel!
+    @IBOutlet weak var placeImage: UIImageView!
     
     
     
@@ -29,22 +31,88 @@ class InfoViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-//        print(infos)
+        print(infos)
         name.text = infos[1]
-        servimos.text = infos[5]
+        servimos.text = infos[5].replacingOccurrences(of: ",", with: "\n")
         aval = Int(infos[6])!
 //        print(aval)
-        
+        if infos[7] != "default" {
+            getImage()
+        }
         self.starRate()
         if infos[0] == "0" {
             flag.setOn(false, animated: true)
+            self.openLabel.text = "Fechado"
         }
         openPlace()
+        
+        
     }
-
     
     @IBAction func toggle(_ sender: AnyObject) {
         openPlace()
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let selectedPhoto = info[UIImagePickerControllerOriginalImage] as! UIImage
+        placeImage.image = selectedPhoto
+        saveImageDocumentDirectory(imageSave: selectedPhoto)
+        dismiss(animated: true)
+    }
+    
+    @IBAction func importImage(_ sender: AnyObject) {
+        
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = .photoLibrary
+        infos[7] = String("\(infos[1])\(infos[6])).png")
+        syncronize()
+        present(imagePicker, animated: true)
+    }
+    
+    func saveImageDocumentDirectory(imageSave: UIImage){
+        let fileManager = FileManager.default
+        let paths = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(infos[7])
+        let image = imageSave
+        print(paths)
+        let imageData = UIImageJPEGRepresentation(image, 0.5)
+        fileManager.createFile(atPath: paths as String, contents: imageData, attributes: nil)
+    }
+    
+    func getDirectoryPath() -> String {
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        let documentsDirectory = paths[0]
+        return documentsDirectory
+    }
+    
+    func getImage(){
+        let fileManager = FileManager.default
+        let imagePAth = (self.getDirectoryPath() as NSString).appendingPathComponent(infos[7])
+        if fileManager.fileExists(atPath: imagePAth){
+            self.placeImage.image = UIImage(contentsOfFile: imagePAth)
+        } else {
+            print("No Image")
+        }
+    }
+    
+    func createDirectory(){
+        let fileManager = FileManager.default
+        let paths = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent("SnackSpot")
+        if !fileManager.fileExists(atPath: paths){
+            try! fileManager.createDirectory(atPath: paths, withIntermediateDirectories: true, attributes: nil)
+        } else {
+            print("Already dictionary created.")
+        }
+    }
+    
+    func deleteDirectory(){
+        let fileManager = FileManager.default
+        let paths = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent("SnackSpot")
+        if fileManager.fileExists(atPath: paths){
+            try! fileManager.removeItem(atPath: paths)
+        } else {
+            print("Something wronge.")
+        }
     }
     
     func openPlace(){
@@ -52,13 +120,30 @@ class InfoViewController: UIViewController {
         if self.flag.isOn {
             infos[0] = "1"
             self.checkinButton.isEnabled = true
+            self.openLabel.text = "Aberto"
         } else {
             infos[0] = "0"
             self.checkinButton.isEnabled = false
+            self.openLabel.text = "Fechado"
         }
-        
+        syncronize()
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "CheckIn" {
+            let str = infos[3] + ";;" + infos[4]
+            let sendId = segue.destination as! ViewController
+            sendId.checkin = str
+        }
+        if segue.identifier == "editInfos" {
+            let sendId = segue.destination as! EditInfosViewController
+            sendId.info = self.infos
+        }
+    }
+    
+    func syncronize() {
         let infosDefault = UserDefaults.standard
-        
         if infosDefault.value(forKey: "allLocations") != nil {
             var  locations = infosDefault.value(forKey: "allLocations") as! [[String]]
             var f = false
@@ -72,20 +157,10 @@ class InfoViewController: UIViewController {
             }
             
             if f { locations[i] = infos }
-//            print(locations)
+            //            print(locations)
             
             infosDefault.set(locations, forKey: "allLocations")
             infosDefault.synchronize()
-        }
-    
-    }
-    
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "CheckIn" {
-            let str = infos[3] + ";;" + infos[4]
-            let sendId = segue.destination as! ViewController
-            sendId.checkin = str
         }
     }
     

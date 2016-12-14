@@ -23,7 +23,11 @@
         <string>fbauth2</string>
         <string>fbshareextension</string>
     </array>
+    <key>NSCameraUsageDescription</key>
+    <string>Access needed to use your camera.</string>
     
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>Access needed to photo gallery.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>App needs location</string>
 	<key>CFBundleDevelopmentRegion</key>

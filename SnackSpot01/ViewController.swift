@@ -99,15 +99,18 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
                                                 if let long = place["longitude"] as? String {
                                                     if let cardapio = place["cardapio"] as? String{
                                                         if let aval = place["aval"] as? String {
-                                                            var data:[String] = []
-                                                            data.append(id)
-                                                            data.append(title)
-                                                            data.append(subtitle)
-                                                            data.append(lati)
-                                                            data.append(long)
-                                                            data.append(cardapio)
-                                                            data.append(aval)
-                                                            self.placesData.append(data)
+                                                            if let image = place["image"] as? String {
+                                                                var data:[String] = []
+                                                                data.append(id)
+                                                                data.append(title)
+                                                                data.append(subtitle)
+                                                                data.append(lati)
+                                                                data.append(long)
+                                                                data.append(cardapio)
+                                                                data.append(aval)
+                                                                data.append(image)
+                                                                self.placesData.append(data)
+                                                            }
                                                         }
                                                     }
                                                 }
